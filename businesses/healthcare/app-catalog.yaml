@@ -1,0 +1,16 @@
+business: healthcare
+apps:
+  - app: crm
+    priority: important
+  - app: emr-ehr
+    priority: essential
+  - app: appointment-scheduling
+    priority: essential
+  - app: billing-rcm
+    priority: essential
+  - app: patient-portal
+    priority: important
+  - app: telehealth
+    priority: important
+  - app: lab-information-system
+    priority: advanced

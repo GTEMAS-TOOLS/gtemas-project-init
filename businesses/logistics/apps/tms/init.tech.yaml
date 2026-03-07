@@ -1,0 +1,35 @@
+business: logistics
+app: tms
+project_name_pattern: "{business}-{app}"
+priority: essential
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - owner
+  - manager
+  - staff
+core_modules:
+  - shipment_planning
+  - carrier_management
+  - freight_audit
+  - route_optimization
+integrations:
+  - wms
+  - gps_telematics
+nfr:
+  performance: "P95 API < 400ms for core operations"
+  security: "RBAC, audit log, encrypted sensitive fields"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - transport_compliance

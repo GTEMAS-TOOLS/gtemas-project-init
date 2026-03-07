@@ -1,0 +1,9 @@
+{
+  "name": "business-app-init",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "seed-catalog": "node generators/seed-business-catalog.js",
+    "init-project": "node generators/create-project.js"
+  }
+}

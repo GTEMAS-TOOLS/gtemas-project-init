@@ -1,0 +1,14 @@
+business: manufacturing
+apps:
+  - app: erp
+    priority: essential
+  - app: mes
+    priority: essential
+  - app: wms
+    priority: important
+  - app: qms
+    priority: important
+  - app: cmms
+    priority: important
+  - app: plm
+    priority: advanced

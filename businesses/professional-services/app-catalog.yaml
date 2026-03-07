@@ -1,0 +1,14 @@
+business: professional-services
+apps:
+  - app: psa
+    priority: essential
+  - app: project-management
+    priority: essential
+  - app: timesheet-billing
+    priority: important
+  - app: knowledge-management
+    priority: important
+  - app: proposal-cpq
+    priority: important
+  - app: resource-forecasting
+    priority: advanced

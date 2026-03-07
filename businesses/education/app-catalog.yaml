@@ -1,0 +1,14 @@
+business: education
+apps:
+  - app: sis
+    priority: essential
+  - app: lms
+    priority: essential
+  - app: admissions-crm
+    priority: important
+  - app: timetable-scheduling
+    priority: important
+  - app: tuition-billing
+    priority: important
+  - app: exam-proctoring
+    priority: advanced

@@ -1,0 +1,14 @@
+business: wholesale-distribution
+apps:
+  - app: erp
+    priority: essential
+  - app: wms
+    priority: essential
+  - app: b2b-ordering-portal
+    priority: important
+  - app: trade-promotion
+    priority: important
+  - app: procurement-sourcing
+    priority: important
+  - app: demand-planning
+    priority: advanced

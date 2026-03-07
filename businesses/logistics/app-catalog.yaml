@@ -1,0 +1,14 @@
+business: logistics
+apps:
+  - app: tms
+    priority: essential
+  - app: wms
+    priority: essential
+  - app: fleet-management
+    priority: important
+  - app: last-mile-delivery
+    priority: important
+  - app: order-management
+    priority: important
+  - app: customs-trade-compliance
+    priority: advanced

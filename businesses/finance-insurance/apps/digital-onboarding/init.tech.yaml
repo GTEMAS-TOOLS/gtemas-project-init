@@ -1,0 +1,36 @@
+business: finance-insurance
+app: digital-onboarding
+project_name_pattern: "{business}-{app}"
+priority: essential
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - owner
+  - manager
+  - staff
+core_modules:
+  - kyc
+  - document_capture
+  - risk_scoring
+  - approval_workflow
+integrations:
+  - ekyc_provider
+  - crm
+nfr:
+  performance: "P95 API < 400ms for core operations"
+  security: "RBAC, audit log, encrypted sensitive fields"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - aml_controls
+  - privacy_controls

@@ -1,0 +1,14 @@
+business: real-estate
+apps:
+  - app: property-management
+    priority: essential
+  - app: broker-crm
+    priority: essential
+  - app: lease-management
+    priority: important
+  - app: facility-maintenance
+    priority: important
+  - app: tenant-portal
+    priority: important
+  - app: valuation-analytics
+    priority: advanced

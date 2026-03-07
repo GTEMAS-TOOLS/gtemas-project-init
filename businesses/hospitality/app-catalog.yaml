@@ -1,0 +1,14 @@
+business: hospitality
+apps:
+  - app: pms
+    priority: essential
+  - app: restaurant-pos
+    priority: essential
+  - app: booking-engine
+    priority: important
+  - app: housekeeping-operations
+    priority: important
+  - app: revenue-management
+    priority: important
+  - app: guest-loyalty
+    priority: advanced

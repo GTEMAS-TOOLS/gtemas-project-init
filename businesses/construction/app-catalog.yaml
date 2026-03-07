@@ -1,0 +1,14 @@
+business: construction
+apps:
+  - app: project-controls
+    priority: essential
+  - app: procurement
+    priority: essential
+  - app: field-service
+    priority: important
+  - app: asset-equipment
+    priority: important
+  - app: safety-compliance
+    priority: important
+  - app: bim-collaboration
+    priority: advanced

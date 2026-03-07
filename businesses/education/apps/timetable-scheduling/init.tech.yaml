@@ -1,0 +1,33 @@
+business: education
+app: timetable-scheduling
+project_name_pattern: "{business}-{app}"
+priority: important
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - owner
+  - manager
+  - staff
+core_modules:
+  - class_schedule
+  - room_allocation
+  - teacher_workload
+integrations:
+  - sis
+nfr:
+  performance: "P95 API < 400ms for core operations"
+  security: "RBAC, audit log, encrypted sensitive fields"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - audit_log
