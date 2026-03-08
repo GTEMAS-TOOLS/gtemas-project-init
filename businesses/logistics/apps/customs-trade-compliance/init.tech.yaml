@@ -2,6 +2,7 @@ business: logistics
 app: customs-trade-compliance
 project_name_pattern: "{business}-{app}"
 priority: advanced
+description: "Customs documentation, HS code classification, duty/tax calculation, and trade compliance screening"
 language_output:
   - en
   - vi
@@ -15,17 +16,36 @@ mode_options:
   - replace_existing
   - new_app
 target_users:
-  - owner
-  - manager
-  - staff
+  - customs_broker
+  - trade_compliance_officer
+  - import_export_coordinator
 core_modules:
-  - trade_docs
-  - hs_code
-  - duty_tax
+  - trade_document_generation
+  - hs_code_classification
+  - duty_tax_calculation
   - compliance_screening
+  - preferential_trade_agreements
+  - denied_party_screening
+  - audit_trail
+  - regulatory_updates
+key_user_flows:
+  - Generate customs declaration from shipment data
+  - Classify goods with correct HS code
+  - Calculate duties and taxes for import
+  - Screen parties against denied/restricted lists
+  - Apply preferential trade agreement for tariff reduction
+data_entities:
+  - CustomsDeclaration
+  - HSCode
+  - DutyCalculation
+  - TradeAgreement
+  - ScreeningResult
+  - ComplianceRecord
 integrations:
-  - tms
-  - erp
+  - tms (inbound)
+  - erp (bidirectional)
+  - customs_authority_edi (outbound)
+  - screening_database (outbound)
 nfr:
   performance: "P95 API < 400ms for core operations"
   security: "RBAC, audit log, encrypted sensitive fields"
@@ -33,3 +53,5 @@ nfr:
   ai_governance: "Human review required for AI-generated business logic"
 compliance:
   - trade_compliance
+  - aml_screening
+  - export_controls

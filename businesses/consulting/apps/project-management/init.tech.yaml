@@ -1,0 +1,59 @@
+business: consulting
+app: project-management
+project_name_pattern: "{business}-{app}"
+priority: essential
+description: "Task management, milestones, dependencies, risk tracking, and team collaboration"
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - project_manager
+  - consultant
+  - team_lead
+  - client_stakeholder
+core_modules:
+  - task_board
+  - milestone_tracking
+  - dependency_management
+  - risk_log
+  - deliverable_tracking
+  - meeting_notes
+  - status_reporting
+  - client_collaboration
+key_user_flows:
+  - Break down project into tasks and assign owners
+  - Track task progress and flag blockers
+  - Update risk register and mitigation plans
+  - Generate weekly status report for client
+  - Manage deliverable review and approval
+data_entities:
+  - Task
+  - Milestone
+  - Risk
+  - Deliverable
+  - StatusReport
+  - MeetingNote
+  - Dependency
+integrations:
+  - psa (bidirectional)
+  - document-management (bidirectional)
+  - email (outbound)
+  - collaboration_tool (bidirectional)
+nfr:
+  performance: "P95 API < 400ms for core operations"
+  security: "RBAC, audit log, encrypted sensitive fields"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - audit_trail
+  - change_log
+  - client_confidentiality

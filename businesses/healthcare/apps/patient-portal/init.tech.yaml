@@ -2,6 +2,7 @@ business: healthcare
 app: patient-portal
 project_name_pattern: "{business}-{app}"
 priority: important
+description: "Patient-facing self-service portal for appointments, results, messaging, and payments"
 language_output:
   - en
   - vi
@@ -15,17 +16,38 @@ mode_options:
   - replace_existing
   - new_app
 target_users:
-  - owner
-  - manager
-  - staff
+  - patient
+  - patient_family_member
+  - care_coordinator
 core_modules:
   - self_service_profile
-  - appointments
-  - results_view
-  - secure_messages
+  - appointment_management
+  - lab_results_view
+  - secure_messaging
+  - prescription_refill
+  - bill_payment
+  - health_education
+  - consent_forms
+key_user_flows:
+  - Patient login and profile management
+  - View lab results and download reports
+  - Send secure message to care team
+  - Request prescription refill
+  - Pay outstanding bills online
+  - Complete pre-visit forms and consent
+data_entities:
+  - PatientAccount
+  - Message
+  - LabResult
+  - Appointment
+  - Payment
+  - ConsentForm
+  - PrescriptionRefill
 integrations:
-  - emr-ehr
-  - payment_gateway
+  - emr-ehr (inbound)
+  - payment_gateway (outbound)
+  - sms (outbound)
+  - email (outbound)
 nfr:
   performance: "P95 API < 400ms for core operations"
   security: "RBAC, audit log, encrypted sensitive fields"
@@ -33,3 +55,5 @@ nfr:
   ai_governance: "Human review required for AI-generated business logic"
 compliance:
   - consent_management
+  - hipaa
+  - accessibility_wcag

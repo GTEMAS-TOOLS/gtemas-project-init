@@ -1,0 +1,22 @@
+business: biotech
+apps:
+  - app: lab-information-management
+    priority: essential
+  - app: research-data-management
+    priority: essential
+  - app: ip-portfolio
+    priority: important
+  - app: grant-management
+    priority: essential
+  - app: regulatory-compliance
+    priority: important
+  - app: bioprocessing
+    priority: important
+  - app: collaboration-platform
+    priority: important
+  - app: crm
+    priority: important
+  - app: accounting-finance
+    priority: important
+  - app: bi-analytics
+    priority: important

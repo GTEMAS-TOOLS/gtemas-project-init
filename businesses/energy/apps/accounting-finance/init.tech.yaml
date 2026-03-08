@@ -1,0 +1,58 @@
+business: energy
+app: accounting-finance
+project_name_pattern: "{business}-{app}"
+priority: important
+description: "General ledger, AP/AR, financial reporting, and regulatory accounting for energy operations"
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - finance_controller
+  - accountant
+  - cfo
+  - regulatory_accountant
+core_modules:
+  - general_ledger
+  - accounts_payable
+  - accounts_receivable
+  - cashflow_management
+  - financial_reporting
+  - regulatory_accounting
+  - budget_management
+  - tax_management
+key_user_flows:
+  - Record journal entries and close period
+  - Process vendor invoices
+  - Generate FERC/regulatory financial reports
+  - Manage capital project budgets
+  - Prepare tax filings
+data_entities:
+  - GLAccount
+  - JournalEntry
+  - Invoice
+  - Payment
+  - Budget
+  - TaxRecord
+  - FinancialReport
+integrations:
+  - banking (bidirectional)
+  - energy-trading (inbound)
+  - meter-data-management (inbound)
+nfr:
+  performance: "P95 API < 400ms for core operations"
+  security: "RBAC, audit log, encrypted sensitive fields"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - audit_log
+  - tax_compliance
+  - ferc_accounting

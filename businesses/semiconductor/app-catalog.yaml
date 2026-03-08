@@ -1,0 +1,20 @@
+business: semiconductor
+apps:
+  - app: chip-design-management
+    priority: essential
+  - app: fab-operations
+    priority: important
+  - app: yield-management
+    priority: essential
+  - app: wafer-tracking
+    priority: important
+  - app: equipment-maintenance
+    priority: important
+  - app: supply-chain
+    priority: important
+  - app: ip-management
+    priority: essential
+  - app: quality-control
+    priority: important
+  - app: bi-analytics
+    priority: important

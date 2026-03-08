@@ -2,6 +2,7 @@ business: real-estate
 app: property-management
 project_name_pattern: "{business}-{app}"
 priority: essential
+description: "Property portfolio management with tenant contracts, rent billing, and maintenance coordination"
 language_output:
   - en
   - vi
@@ -15,17 +16,39 @@ mode_options:
   - replace_existing
   - new_app
 target_users:
-  - owner
-  - manager
-  - staff
+  - property_manager
+  - finance_controller
+  - maintenance_coordinator
+  - tenant
 core_modules:
   - property_inventory
-  - tenant_contracts
+  - tenant_management
   - rent_billing
-  - maintenance_requests
+  - cam_reconciliation
+  - maintenance_request_tracking
+  - vacancy_tracking
+  - financial_reporting
+  - document_storage
+key_user_flows:
+  - Onboard new tenant with lease setup
+  - Generate monthly rent invoices
+  - Process maintenance request to completion
+  - Reconcile common area maintenance charges
+  - Track vacancy and market for new tenants
+data_entities:
+  - Property
+  - Unit
+  - Tenant
+  - Lease
+  - Invoice
+  - MaintenanceRequest
+  - CAMCharge
+  - Vacancy
 integrations:
-  - payment_gateway
-  - accounting-finance
+  - payment_gateway (bidirectional)
+  - accounting-finance (outbound)
+  - lease-management (bidirectional)
+  - facility-maintenance (bidirectional)
 nfr:
   performance: "P95 API < 400ms for core operations"
   security: "RBAC, audit log, encrypted sensitive fields"
@@ -33,3 +56,5 @@ nfr:
   ai_governance: "Human review required for AI-generated business logic"
 compliance:
   - contract_audit
+  - tenant_data_privacy
+  - fair_housing

@@ -1,0 +1,56 @@
+business: asset-management
+app: fund-accounting
+project_name_pattern: "{business}-{app}"
+priority: important
+description: "fund accounting for asset-management operations"
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - manager
+  - specialist
+  - analyst
+  - operator
+core_modules:
+  - fund_accounting_core
+  - workflow_management
+  - reporting
+  - configuration
+  - audit_tracking
+  - notifications
+  - search
+  - integrations
+key_user_flows:
+  - Create new fund accounting record
+  - Review and approve fund accounting items
+  - Generate fund accounting report
+  - Track fund accounting KPIs
+  - Manage fund accounting configuration
+data_entities:
+  - Record
+  - Activity
+  - Report
+  - Configuration
+  - AuditLog
+integrations:
+  - erp (bidirectional)
+  - email (outbound)
+  - reporting (outbound)
+nfr:
+  performance: "P95 API < 400ms for core operations"
+  security: "RBAC, audit log, encrypted sensitive fields"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - audit_log
+  - access_controls
+  - data_governance

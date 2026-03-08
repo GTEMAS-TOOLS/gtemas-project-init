@@ -2,6 +2,7 @@ business: retail
 app: order-management
 project_name_pattern: "{business}-{app}"
 priority: essential
+description: "Unified order orchestration for e-commerce, in-store, and omnichannel fulfillment"
 language_output:
   - en
   - vi
@@ -15,17 +16,38 @@ mode_options:
   - replace_existing
   - new_app
 target_users:
-  - owner
-  - manager
-  - staff
+  - operations_manager
+  - fulfillment_staff
+  - customer_service_rep
 core_modules:
   - order_orchestration
-  - fulfillment
+  - fulfillment_routing
   - returns_management
+  - split_shipment
+  - click_and_collect
+  - ship_from_store
+  - status_tracking
+  - exception_handling
+key_user_flows:
+  - Order placed online and routed to nearest fulfillment point
+  - Click-and-collect: order online, pick up in store
+  - Ship-from-store fulfillment by store associate
+  - Customer initiates return online for in-store drop-off
+  - Handle order exception (partial stock, address issue)
+data_entities:
+  - Order
+  - OrderLine
+  - Fulfillment
+  - Shipment
+  - Return
+  - RefundRequest
+  - FulfillmentLocation
 integrations:
-  - ecommerce
-  - wms
-  - tms
+  - ecommerce (inbound)
+  - wms (bidirectional)
+  - tms (outbound)
+  - inventory-management (bidirectional)
+  - payment_gateway (outbound)
 nfr:
   performance: "P95 API < 400ms for core operations"
   security: "RBAC, audit log, encrypted sensitive fields"
@@ -33,3 +55,4 @@ nfr:
   ai_governance: "Human review required for AI-generated business logic"
 compliance:
   - audit_log
+  - consumer_protection

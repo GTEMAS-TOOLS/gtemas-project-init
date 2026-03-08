@@ -1,0 +1,18 @@
+business: mining
+apps:
+  - app: mine-planning
+    priority: essential
+  - app: fleet-dispatch
+    priority: essential
+  - app: safety-management
+    priority: essential
+  - app: asset-maintenance
+    priority: important
+  - app: processing-plant
+    priority: important
+  - app: environmental-monitoring
+    priority: important
+  - app: accounting-finance
+    priority: important
+  - app: bi-analytics
+    priority: important

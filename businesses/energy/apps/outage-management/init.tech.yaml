@@ -1,0 +1,58 @@
+business: energy
+app: outage-management
+project_name_pattern: "{business}-{app}"
+priority: important
+description: "Outage detection, crew dispatch, restoration tracking, and customer communication"
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - outage_coordinator
+  - dispatcher
+  - field_crew_leader
+  - customer_service
+core_modules:
+  - outage_detection
+  - trouble_ticket_management
+  - crew_dispatch
+  - restoration_tracking
+  - customer_notification
+  - damage_assessment
+  - mutual_aid_coordination
+  - post_event_analysis
+key_user_flows:
+  - Detect outage from smart meter data or customer calls
+  - Create trouble ticket and dispatch nearest crew
+  - Track restoration progress on outage map
+  - Send automated updates to affected customers
+  - Conduct post-event analysis and reporting
+data_entities:
+  - Outage
+  - TroubleTicket
+  - Crew
+  - RestorationStep
+  - CustomerNotification
+  - DamageReport
+integrations:
+  - meter-data-management (inbound)
+  - gis (bidirectional)
+  - customer_portal (outbound)
+  - weather_service (inbound)
+nfr:
+  performance: "P95 API < 400ms for core operations"
+  security: "RBAC, audit log, encrypted sensitive fields"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - regulatory_reporting
+  - restoration_standards
+  - customer_communication

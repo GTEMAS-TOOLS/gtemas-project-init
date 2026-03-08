@@ -1,0 +1,22 @@
+business: media
+apps:
+  - app: content-management
+    priority: essential
+  - app: digital-asset-management
+    priority: essential
+  - app: ad-sales-management
+    priority: essential
+  - app: subscription-platform
+    priority: important
+  - app: rights-management
+    priority: essential
+  - app: content-analytics
+    priority: important
+  - app: social-publishing
+    priority: important
+  - app: crm
+    priority: important
+  - app: accounting-finance
+    priority: important
+  - app: bi-analytics
+    priority: important

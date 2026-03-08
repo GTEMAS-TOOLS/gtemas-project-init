@@ -2,6 +2,7 @@ business: retail
 app: pricing-promotion
 project_name_pattern: "{business}-{app}"
 priority: advanced
+description: "Dynamic pricing engine and promotion management with campaign analysis"
 language_output:
   - en
   - vi
@@ -15,16 +16,37 @@ mode_options:
   - replace_existing
   - new_app
 target_users:
-  - owner
-  - manager
-  - staff
+  - pricing_analyst
+  - merchandiser
+  - marketing_manager
+  - category_manager
 core_modules:
-  - price_rules
-  - promotion_engine
-  - campaign_analysis
+  - price_rules_engine
+  - promotion_calendar
+  - bundle_pricing
+  - markdown_optimization
+  - competitor_monitoring
+  - campaign_roi_analysis
+  - approval_workflow
+  - simulation_tool
+key_user_flows:
+  - Create and schedule a promotion campaign
+  - Set up buy-one-get-one or bundle pricing rule
+  - Simulate margin impact before activating price change
+  - Analyze campaign performance vs. baseline
+  - Auto-markdown slow-moving inventory
+data_entities:
+  - PriceRule
+  - Promotion
+  - Campaign
+  - PriceHistory
+  - CompetitorPrice
+  - MarginAnalysis
 integrations:
-  - pos
-  - ecommerce
+  - pos (outbound)
+  - ecommerce (outbound)
+  - inventory-management (inbound)
+  - bi-analytics (outbound)
 nfr:
   performance: "P95 API < 400ms for core operations"
   security: "RBAC, audit log, encrypted sensitive fields"
@@ -32,3 +54,5 @@ nfr:
   ai_governance: "Human review required for AI-generated business logic"
 compliance:
   - approval_workflow
+  - audit_log
+  - price_regulation_controls

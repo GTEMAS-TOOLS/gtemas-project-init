@@ -2,6 +2,7 @@ business: retail
 app: pos
 project_name_pattern: "{business}-{app}"
 priority: essential
+description: "Point-of-sale system for in-store checkout, payments, returns, and staff management"
 language_output:
   - en
   - vi
@@ -15,24 +16,50 @@ mode_options:
   - replace_existing
   - new_app
 target_users:
-  - owner
-  - manager
-  - staff
+  - cashier
+  - store_manager
+  - floor_associate
+  - finance_controller
 core_modules:
-  - checkout
-  - payments
-  - returns
-  - store_shift
-  - receipt
+  - checkout_register
+  - payment_processing
+  - returns_exchanges
+  - store_shift_management
+  - receipt_printing
+  - discount_coupon
+  - offline_mode
+  - multi_store_support
+  - cash_drawer_management
+  - barcode_scanning
+key_user_flows:
+  - Scan items, apply discounts, and complete checkout
+  - Process return or exchange with receipt lookup
+  - Open/close register shift with cash reconciliation
+  - Apply loyalty points or coupon at checkout
+  - Handle offline sale and sync when reconnected
+data_entities:
+  - Transaction
+  - TransactionItem
+  - Payment
+  - Return
+  - Register
+  - Shift
+  - Coupon
+  - Receipt
+  - CashDrawer
 integrations:
-  - inventory-management
-  - ecommerce
-  - accounting-finance
+  - inventory-management (bidirectional)
+  - ecommerce (bidirectional)
+  - accounting-finance (outbound)
+  - loyalty-customer (bidirectional)
+  - payment_terminal (bidirectional)
 nfr:
-  performance: "P95 API < 400ms for core operations"
-  security: "RBAC, audit log, encrypted sensitive fields"
-  availability: "99.9% monthly"
+  performance: "Checkout completion < 3s, offline sync < 30s on reconnect"
+  security: "PCI-DSS, encrypted card data, RBAC per register"
+  availability: "99.95% with offline fallback"
   ai_governance: "Human review required for AI-generated business logic"
 compliance:
+  - pci_dss
   - tax_controls
   - audit_log
+  - receipt_regulations

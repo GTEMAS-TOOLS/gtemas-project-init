@@ -2,6 +2,7 @@ business: logistics
 app: wms
 project_name_pattern: "{business}-{app}"
 priority: essential
+description: "Warehouse management for receiving, storage optimization, picking/packing, and cross-docking"
 language_output:
   - en
   - vi
@@ -15,17 +16,40 @@ mode_options:
   - replace_existing
   - new_app
 target_users:
-  - owner
-  - manager
-  - staff
+  - warehouse_manager
+  - warehouse_operator
+  - receiving_clerk
+  - shipping_clerk
 core_modules:
   - receiving
-  - slotting
+  - slotting_optimization
   - picking_packing
   - cross_dock
+  - wave_planning
+  - yard_management
+  - labor_tracking
+  - inventory_visibility
+  - returns_processing
+key_user_flows:
+  - Receive inbound shipment and scan to inventory
+  - Optimize slot assignment based on velocity
+  - Generate pick wave and assign to operators
+  - Process cross-dock shipment without storage
+  - Track labor productivity by task type
+data_entities:
+  - Warehouse
+  - Slot
+  - PickWave
+  - Inbound
+  - Outbound
+  - CrossDock
+  - LaborRecord
+  - InventorySnapshot
 integrations:
-  - tms
-  - erp
+  - tms (bidirectional)
+  - erp (bidirectional)
+  - barcode_rfid (inbound)
+  - conveyor_sortation (bidirectional)
 nfr:
   performance: "P95 API < 400ms for core operations"
   security: "RBAC, audit log, encrypted sensitive fields"
@@ -33,3 +57,5 @@ nfr:
   ai_governance: "Human review required for AI-generated business logic"
 compliance:
   - inventory_audit
+  - safety_controls
+  - lot_traceability

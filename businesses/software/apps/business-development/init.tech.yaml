@@ -1,0 +1,62 @@
+business: software
+app: business-development
+project_name_pattern: "{business}-{app}"
+priority: advanced
+description: "Sales pipeline, proposal management, deal tracking, and account growth for IT services"
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - business_development_manager
+  - account_manager
+  - presales_engineer
+  - ceo
+core_modules:
+  - lead_pipeline
+  - opportunity_tracking
+  - proposal_builder
+  - effort_estimation
+  - rate_card_management
+  - contract_management
+  - account_planning
+  - win_loss_analysis
+  - referral_tracking
+key_user_flows:
+  - Capture lead and qualify opportunity
+  - Prepare proposal with effort estimation and team composition
+  - Track deal through negotiation stages
+  - Plan account growth strategy for existing clients
+  - Analyze win/loss patterns and improve strategy
+data_entities:
+  - Lead
+  - Opportunity
+  - Proposal
+  - Estimation
+  - Contract
+  - Account
+  - WinLossRecord
+  - RateCard
+integrations:
+  - crm (bidirectional)
+  - talent-management (inbound)
+  - project-delivery (inbound)
+  - document-management (outbound)
+  - esign (outbound)
+nfr:
+  performance: "P95 API < 400ms for core operations"
+  security: "RBAC, audit log, encrypted sensitive fields"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - proposal_approval_workflow
+  - pricing_governance
+  - client_nda

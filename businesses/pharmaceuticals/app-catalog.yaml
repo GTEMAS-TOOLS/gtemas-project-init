@@ -1,0 +1,22 @@
+business: pharmaceuticals
+apps:
+  - app: clinical-trial-management
+    priority: essential
+  - app: drug-development-pipeline
+    priority: important
+  - app: pharmacovigilance
+    priority: important
+  - app: regulatory-submission
+    priority: important
+  - app: manufacturing-gmp
+    priority: important
+  - app: supply-chain
+    priority: important
+  - app: quality-management
+    priority: essential
+  - app: crm
+    priority: important
+  - app: accounting-finance
+    priority: important
+  - app: bi-analytics
+    priority: important

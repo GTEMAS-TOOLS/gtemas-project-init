@@ -1,0 +1,59 @@
+business: consulting
+app: hris
+project_name_pattern: "{business}-{app}"
+priority: important
+description: "HR management with employee profiles, payroll, attendance, and performance for consulting"
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - hr_manager
+  - payroll_officer
+  - department_head
+  - employee
+core_modules:
+  - employee_profile
+  - attendance_tracking
+  - payroll_processing
+  - leave_management
+  - performance_review
+  - recruitment
+  - onboarding
+  - compliance_training
+key_user_flows:
+  - Onboard new employee
+  - Process monthly payroll
+  - Manage leave requests
+  - Conduct performance review
+  - Track recruitment pipeline
+data_entities:
+  - Employee
+  - Attendance
+  - PayrollRecord
+  - LeaveRequest
+  - PerformanceReview
+  - Candidate
+  - Training
+integrations:
+  - biometric_device (inbound)
+  - payroll_provider (outbound)
+  - email (outbound)
+  - calendar (bidirectional)
+nfr:
+  performance: "P95 API < 400ms for core operations"
+  security: "RBAC, audit log, encrypted sensitive fields"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - labor_data_controls
+  - privacy_controls
+  - equal_opportunity

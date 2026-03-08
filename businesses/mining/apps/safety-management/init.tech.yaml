@@ -1,0 +1,59 @@
+business: mining
+app: safety-management
+project_name_pattern: "{business}-{app}"
+priority: essential
+description: "Safety incident tracking, risk assessment, permit-to-work, and regulatory compliance for mining operations"
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - safety_manager
+  - mine_supervisor
+  - safety_officer
+  - worker
+core_modules:
+  - incident_reporting
+  - risk_assessment
+  - permit_to_work
+  - safety_inspection
+  - hazard_identification
+  - emergency_response
+  - training_tracking
+  - fatigue_management
+key_user_flows:
+  - Report and investigate safety incident with root cause
+  - Conduct job hazard analysis for new activity
+  - Issue and manage confined space permit to work
+  - Perform scheduled safety inspection with checklist
+  - Track worker fatigue hours and fitness for duty
+data_entities:
+  - Incident
+  - RiskAssessment
+  - Permit
+  - Inspection
+  - Hazard
+  - TrainingRecord
+  - FatigueLog
+integrations:
+  - fleet-dispatch (inbound)
+  - wearable_sensors (inbound)
+  - regulatory_portal (outbound)
+  - hris (inbound)
+nfr:
+  performance: "P95 API < 400ms for core operations"
+  security: "RBAC, audit log, encrypted sensitive fields"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - msha_compliance
+  - risk_management_standards
+  - emergency_preparedness

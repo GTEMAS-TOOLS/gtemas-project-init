@@ -1,0 +1,69 @@
+business: ecommerce
+app: storefront-commerce
+project_name_pattern: "{business}-{app}"
+priority: essential
+description: "Online storefront with product catalog, cart, checkout, payment, and responsive design"
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - customer
+  - merchandiser
+  - content_editor
+  - ecommerce_manager
+core_modules:
+  - product_catalog
+  - search_filtering
+  - cart_checkout
+  - payment_processing
+  - order_confirmation
+  - responsive_design
+  - seo_optimization
+  - product_reviews
+  - wishlist
+  - inventory_display
+key_user_flows:
+  - Customer discovers products through search/browse
+  - Add items to cart and proceed to checkout
+  - Complete payment (credit card, digital wallet, BNPL)
+  - Receive order confirmation and tracking
+  - Write product review after delivery
+data_entities:
+  - Product
+  - Category
+  - Cart
+  - Order
+  - Payment
+  - Review
+  - Customer
+  - Wishlist
+  - SEOMetadata
+integrations:
+  - oms (outbound)
+  - payment_gateway (bidirectional)
+  - crm (outbound)
+  - analytics (outbound)
+  - cms (inbound)
+nfr:
+  performance: "Page load < 2s, checkout < 3s, handles 20x traffic spikes on sales"
+  security: "PCI-DSS, WAF, bot protection, encrypted sessions"
+  availability: "99.95% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - pci_dss
+  - privacy_policy_controls
+  - accessibility_wcag
+  - consumer_protection
+tech_stack_hints:
+  - Headless commerce for frontend flexibility
+  - CDN and edge caching
+  - SSR/SSG for SEO and performance

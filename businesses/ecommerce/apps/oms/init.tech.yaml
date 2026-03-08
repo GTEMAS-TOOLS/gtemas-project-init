@@ -1,0 +1,59 @@
+business: ecommerce
+app: oms
+project_name_pattern: "{business}-{app}"
+priority: essential
+description: "Order management and fulfillment orchestration with routing, returns, and status synchronization"
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - operations_manager
+  - fulfillment_staff
+  - customer_service_rep
+core_modules:
+  - order_routing
+  - fulfillment_orchestration
+  - returns_processing
+  - status_synchronization
+  - inventory_reservation
+  - split_shipment
+  - exception_handling
+  - shipping_label_generation
+key_user_flows:
+  - Order received and routed to optimal fulfillment center
+  - Pick, pack, and generate shipping label
+  - Sync tracking information to customer
+  - Customer initiates return and receives label
+  - Handle fulfillment exception (out of stock, address issue)
+data_entities:
+  - Order
+  - Fulfillment
+  - Shipment
+  - Return
+  - InventoryReservation
+  - TrackingEvent
+  - ShippingLabel
+integrations:
+  - wms (bidirectional)
+  - tms (outbound)
+  - storefront-commerce (inbound)
+  - shipping_provider (bidirectional)
+  - payment_gateway (outbound for refunds)
+nfr:
+  performance: "P95 API < 400ms for core operations"
+  security: "RBAC, audit log, encrypted sensitive fields"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - audit_log
+  - consumer_protection
+  - return_policy_controls

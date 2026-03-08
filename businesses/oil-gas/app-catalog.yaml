@@ -1,0 +1,18 @@
+business: oil-gas
+apps:
+  - app: production-management
+    priority: essential
+  - app: hse-management
+    priority: essential
+  - app: well-management
+    priority: essential
+  - app: supply-chain
+    priority: important
+  - app: reservoir-management
+    priority: important
+  - app: pipeline-monitoring
+    priority: important
+  - app: accounting-finance
+    priority: important
+  - app: bi-analytics
+    priority: important

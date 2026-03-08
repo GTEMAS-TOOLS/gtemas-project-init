@@ -2,6 +2,7 @@ business: real-estate
 app: lease-management
 project_name_pattern: "{business}-{app}"
 priority: important
+description: "Lease lifecycle management with terms tracking, renewals, escalations, and compliance dates"
 language_output:
   - en
   - vi
@@ -15,16 +16,37 @@ mode_options:
   - replace_existing
   - new_app
 target_users:
-  - owner
-  - manager
-  - staff
+  - lease_administrator
+  - property_manager
+  - legal_team
+  - finance_controller
 core_modules:
-  - lease_terms
-  - renewal
-  - escalation
-  - compliance_dates
+  - lease_terms_tracking
+  - renewal_management
+  - rent_escalation
+  - critical_date_alerts
+  - lease_abstraction
+  - amendment_tracking
+  - reporting
+  - document_management
+key_user_flows:
+  - Abstract key terms from signed lease
+  - Track critical dates (expiry, renewal option, escalation)
+  - Process renewal negotiation and amendment
+  - Calculate rent escalation per clause
+  - Generate lease expiry report for portfolio
+data_entities:
+  - Lease
+  - Term
+  - RenewalOption
+  - Escalation
+  - Amendment
+  - CriticalDate
+  - Document
 integrations:
-  - property-management
+  - property-management (bidirectional)
+  - document-management (bidirectional)
+  - calendar (outbound)
 nfr:
   performance: "P95 API < 400ms for core operations"
   security: "RBAC, audit log, encrypted sensitive fields"
@@ -32,3 +54,5 @@ nfr:
   ai_governance: "Human review required for AI-generated business logic"
 compliance:
   - contract_controls
+  - lease_accounting_standards
+  - audit_trail

@@ -2,6 +2,7 @@ business: education
 app: sis
 project_name_pattern: "{business}-{app}"
 priority: essential
+description: "Student information system for profiles, enrollment, academic records, and attendance tracking"
 language_output:
   - en
   - vi
@@ -15,17 +16,40 @@ mode_options:
   - replace_existing
   - new_app
 target_users:
-  - owner
-  - manager
-  - staff
+  - registrar
+  - academic_advisor
+  - instructor
+  - student
+  - admin_staff
 core_modules:
   - student_profile
-  - enrollment
+  - enrollment_management
   - academic_records
-  - attendance
+  - attendance_tracking
+  - grade_management
+  - transcript_generation
+  - program_management
+  - graduation_audit
+key_user_flows:
+  - Enroll student in program and courses
+  - Record and publish grades
+  - Track attendance and trigger alerts for at-risk students
+  - Generate official transcript
+  - Audit graduation requirements completion
+data_entities:
+  - Student
+  - Program
+  - Course
+  - Enrollment
+  - Grade
+  - Attendance
+  - Transcript
+  - AcademicRecord
 integrations:
-  - lms
-  - billing
+  - lms (bidirectional)
+  - tuition-billing (outbound)
+  - admissions-crm (inbound)
+  - document-management (bidirectional)
 nfr:
   performance: "P95 API < 400ms for core operations"
   security: "RBAC, audit log, encrypted sensitive fields"
@@ -33,3 +57,5 @@ nfr:
   ai_governance: "Human review required for AI-generated business logic"
 compliance:
   - student_data_privacy
+  - ferpa
+  - accreditation_standards

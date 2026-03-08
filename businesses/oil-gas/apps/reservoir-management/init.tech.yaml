@@ -1,0 +1,59 @@
+business: oil-gas
+app: reservoir-management
+project_name_pattern: "{business}-{app}"
+priority: important
+description: "Subsurface modeling, reserve estimation, simulation, and enhanced recovery planning"
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - reservoir_engineer
+  - geoscientist
+  - geophysicist
+  - asset_manager
+core_modules:
+  - reservoir_modeling
+  - reserve_estimation
+  - simulation_management
+  - history_matching
+  - enhanced_recovery_planning
+  - decline_analysis
+  - uncertainty_quantification
+  - field_development_planning
+key_user_flows:
+  - Build and calibrate reservoir model
+  - Estimate proved/probable/possible reserves
+  - Run simulation scenarios for recovery optimization
+  - Perform history match against actual production
+  - Plan enhanced oil recovery strategy
+data_entities:
+  - ReservoirModel
+  - Reserve
+  - Simulation
+  - WellTest
+  - ProductionHistory
+  - RecoveryPlan
+integrations:
+  - production-management (inbound)
+  - geological_data (inbound)
+  - seismic_data (inbound)
+nfr:
+  performance: "P95 API < 400ms for core operations"
+  security: "RBAC, audit log, encrypted sensitive fields"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - sec_reserve_reporting
+  - reserve_classification_standards
+tech_stack_hints:
+  - HPC for reservoir simulation
+  - Geospatial data management

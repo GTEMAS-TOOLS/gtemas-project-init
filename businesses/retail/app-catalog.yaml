@@ -1,10 +1,10 @@
 business: retail
 apps:
-  - app: crm
-    priority: essential
   - app: pos
     priority: essential
   - app: inventory-management
+    priority: essential
+  - app: crm
     priority: essential
   - app: order-management
     priority: essential
@@ -14,3 +14,13 @@ apps:
     priority: important
   - app: pricing-promotion
     priority: advanced
+  - app: crm
+    priority: important
+  - app: accounting-finance
+    priority: important
+  - app: hris
+    priority: important
+  - app: bi-analytics
+    priority: important
+  - app: document-management
+    priority: support

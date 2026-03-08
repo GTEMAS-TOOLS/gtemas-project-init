@@ -2,6 +2,7 @@ business: education
 app: tuition-billing
 project_name_pattern: "{business}-{app}"
 priority: important
+description: "Tuition invoicing, payment plans, financial aid processing, and collections"
 language_output:
   - en
   - vi
@@ -15,17 +16,39 @@ mode_options:
   - replace_existing
   - new_app
 target_users:
-  - owner
-  - manager
-  - staff
+  - bursar
+  - finance_officer
+  - student
+  - parent
+  - financial_aid_officer
 core_modules:
-  - invoice
+  - invoice_generation
   - payment_plans
-  - collections
+  - online_payment
+  - financial_aid_processing
+  - scholarship_deductions
+  - late_fee_management
+  - collections_workflow
   - financial_reports
+key_user_flows:
+  - Generate tuition invoices for enrolled students
+  - Set up installment payment plan
+  - Process online payment and issue receipt
+  - Apply financial aid/scholarship to student account
+  - Send collection notices for overdue balances
+data_entities:
+  - Invoice
+  - Payment
+  - PaymentPlan
+  - FinancialAid
+  - Scholarship
+  - StudentAccount
+  - Receipt
 integrations:
-  - payment_gateway
-  - accounting-finance
+  - payment_gateway (bidirectional)
+  - accounting-finance (outbound)
+  - sis (inbound)
+  - sms_email (outbound)
 nfr:
   performance: "P95 API < 400ms for core operations"
   security: "RBAC, audit log, encrypted sensitive fields"
@@ -33,3 +56,5 @@ nfr:
   ai_governance: "Human review required for AI-generated business logic"
 compliance:
   - billing_audit_controls
+  - financial_aid_regulations
+  - pci_dss

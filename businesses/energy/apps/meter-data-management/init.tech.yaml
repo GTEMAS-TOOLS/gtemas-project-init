@@ -1,0 +1,60 @@
+business: energy
+app: meter-data-management
+project_name_pattern: "{business}-{app}"
+priority: essential
+description: "Smart meter data collection, validation, estimation, and billing-grade usage calculation"
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - meter_operations_manager
+  - billing_analyst
+  - data_analyst
+  - field_technician
+core_modules:
+  - meter_reading_collection
+  - validation_estimation_editing
+  - interval_data_management
+  - meter_asset_tracking
+  - outage_detection
+  - demand_response_signals
+  - data_quality_monitoring
+  - billing_determinants
+key_user_flows:
+  - Collect and validate meter readings
+  - Estimate missing reads using algorithms
+  - Calculate billing determinants from interval data
+  - Detect meter tampering or outage from data gaps
+  - Send demand response signals to smart meters
+data_entities:
+  - Meter
+  - MeterReading
+  - IntervalData
+  - Estimation
+  - BillingDeterminant
+  - DemandResponseEvent
+integrations:
+  - ami_headend (inbound)
+  - billing_system (outbound)
+  - outage_management (outbound)
+nfr:
+  performance: "P95 API < 400ms for core operations"
+  security: "RBAC, audit log, encrypted sensitive fields"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - data_privacy
+  - metering_standards
+  - billing_accuracy
+tech_stack_hints:
+  - Time-series database for interval data
+  - Stream processing for real-time meter events

@@ -1,0 +1,65 @@
+business: software
+app: project-delivery
+project_name_pattern: "{business}-{app}"
+priority: essential
+description: "Project and engagement management for software delivery with agile planning, resource tracking, and client reporting"
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - delivery_manager
+  - project_manager
+  - tech_lead
+  - client_product_owner
+core_modules:
+  - engagement_setup
+  - sprint_planning
+  - resource_allocation
+  - milestone_tracking
+  - risk_management
+  - timesheet_tracking
+  - client_status_reporting
+  - budget_burn_tracking
+  - deliverable_management
+  - retrospective_log
+key_user_flows:
+  - Set up new engagement with scope, team, and budget
+  - Plan sprint with stories and assign to engineers
+  - Track sprint progress and flag blockers
+  - Generate weekly client status report
+  - Review budget burn rate and forecast completion
+data_entities:
+  - Engagement
+  - Sprint
+  - Story
+  - Resource
+  - Milestone
+  - Risk
+  - Timesheet
+  - StatusReport
+  - Budget
+  - Deliverable
+integrations:
+  - talent-management (bidirectional)
+  - jira_azure_devops (bidirectional)
+  - accounting-finance (outbound)
+  - client-portal (outbound)
+  - calendar (outbound)
+nfr:
+  performance: "Dashboard load < 2s, real-time sprint board updates"
+  security: "Client data isolation, RBAC per engagement, audit trail"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - audit_log
+  - data_confidentiality
+  - client_nda

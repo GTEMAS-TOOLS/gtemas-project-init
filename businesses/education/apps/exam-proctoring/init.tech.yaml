@@ -2,6 +2,7 @@ business: education
 app: exam-proctoring
 project_name_pattern: "{business}-{app}"
 priority: advanced
+description: "Online exam setup, identity verification, live monitoring, and integrity incident management"
 language_output:
   - en
   - vi
@@ -15,16 +16,36 @@ mode_options:
   - replace_existing
   - new_app
 target_users:
-  - owner
-  - manager
-  - staff
+  - exam_coordinator
+  - instructor
+  - student
+  - academic_integrity_officer
 core_modules:
-  - exam_setup
-  - identity_check
-  - monitoring
-  - incident_logs
+  - exam_setup_configuration
+  - identity_verification
+  - live_monitoring
+  - incident_flagging
+  - browser_lockdown
+  - recording_review
+  - integrity_reports
+  - accommodation_management
+key_user_flows:
+  - Set up exam with proctoring rules and time limits
+  - Student verifies identity and enters secure exam
+  - AI flags suspicious behavior for human review
+  - Proctor reviews flagged incidents post-exam
+  - Generate integrity report for academic board
+data_entities:
+  - Exam
+  - ProctorSession
+  - IdentityCheck
+  - Incident
+  - Recording
+  - IntegrityReport
 integrations:
-  - lms
+  - lms (bidirectional)
+  - video_platform (bidirectional)
+  - identity_service (outbound)
 nfr:
   performance: "P95 API < 400ms for core operations"
   security: "RBAC, audit log, encrypted sensitive fields"
@@ -32,3 +53,5 @@ nfr:
   ai_governance: "Human review required for AI-generated business logic"
 compliance:
   - privacy_policy_controls
+  - accessibility_wcag
+  - academic_integrity_policy

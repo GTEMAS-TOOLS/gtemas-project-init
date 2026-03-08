@@ -2,6 +2,7 @@ business: construction
 app: bim-collaboration
 project_name_pattern: "{business}-{app}"
 priority: advanced
+description: "BIM model coordination, clash detection, revision control, and stakeholder collaboration"
 language_output:
   - en
   - vi
@@ -15,16 +16,39 @@ mode_options:
   - replace_existing
   - new_app
 target_users:
-  - owner
-  - manager
-  - staff
+  - bim_manager
+  - architect
+  - structural_engineer
+  - mep_coordinator
+  - project_manager
 core_modules:
   - model_coordination
-  - clash_tracking
+  - clash_detection
   - revision_control
+  - markup_review
+  - quantity_extraction
+  - progress_visualization
+  - model_versioning
+  - stakeholder_viewer
+key_user_flows:
+  - Upload and federate models from multiple disciplines
+  - Run clash detection and assign resolution tasks
+  - Review and approve model revisions
+  - Extract quantities for cost estimation
+  - Visualize construction progress against 4D model
+data_entities:
+  - Model
+  - ClashReport
+  - Revision
+  - Markup
+  - Quantity
+  - ModelElement
+  - Discipline
 integrations:
-  - project-controls
-  - document-management
+  - project-controls (outbound)
+  - document-management (bidirectional)
+  - cad_system (inbound)
+  - viewer_api (outbound)
 nfr:
   performance: "P95 API < 400ms for core operations"
   security: "RBAC, audit log, encrypted sensitive fields"
@@ -32,3 +56,9 @@ nfr:
   ai_governance: "Human review required for AI-generated business logic"
 compliance:
   - document_traceability
+  - model_audit_trail
+  - bim_standards
+tech_stack_hints:
+  - IFC/BCF open standards
+  - WebGL-based 3D viewer
+  - Cloud storage for large model files

@@ -1,0 +1,58 @@
+business: banking
+app: collections
+project_name_pattern: "{business}-{app}"
+priority: important
+description: "Delinquency tracking, contact strategy automation, settlements, and recovery optimization"
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - collections_agent
+  - collections_manager
+  - customer
+  - legal_team
+core_modules:
+  - delinquency_tracking
+  - contact_strategy_automation
+  - promise_to_pay
+  - settlement_negotiation
+  - payment_arrangement
+  - escalation_workflow
+  - skip_tracing
+  - performance_reporting
+key_user_flows:
+  - Identify delinquent accounts and prioritize
+  - Execute automated contact strategy (SMS, call, email)
+  - Record promise to pay and track fulfillment
+  - Negotiate settlement and create payment arrangement
+  - Escalate to legal for write-off accounts
+data_entities:
+  - DelinquentAccount
+  - ContactAttempt
+  - PromiseToPay
+  - Settlement
+  - PaymentArrangement
+  - Escalation
+integrations:
+  - loan-policy-management (inbound)
+  - crm (bidirectional)
+  - payment_gateway (outbound)
+  - sms_email (outbound)
+nfr:
+  performance: "P95 API < 400ms for core operations"
+  security: "RBAC, audit log, encrypted sensitive fields"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - customer_protection_controls
+  - fair_debt_collection
+  - contact_regulations

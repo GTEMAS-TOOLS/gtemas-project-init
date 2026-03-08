@@ -1,0 +1,61 @@
+business: software
+app: client-portal
+project_name_pattern: "{business}-{app}"
+priority: important
+description: "Client-facing portal for project visibility, deliverable review, feedback, and communication"
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - client_product_owner
+  - client_stakeholder
+  - delivery_manager
+  - account_manager
+core_modules:
+  - project_dashboard
+  - deliverable_review
+  - feedback_collection
+  - document_sharing
+  - milestone_tracking
+  - issue_escalation
+  - meeting_scheduler
+  - invoice_history
+  - satisfaction_surveys
+key_user_flows:
+  - Client views project progress and sprint status
+  - Review and approve deliverables with comments
+  - Escalate issue or concern to delivery team
+  - Access shared documents and meeting notes
+  - Complete satisfaction survey
+data_entities:
+  - ProjectView
+  - Deliverable
+  - Feedback
+  - Document
+  - Escalation
+  - Meeting
+  - Survey
+integrations:
+  - project-delivery (inbound)
+  - document-management (bidirectional)
+  - accounting-finance (inbound for invoices)
+  - calendar (bidirectional)
+  - notification (outbound)
+nfr:
+  performance: "P95 API < 400ms for core operations"
+  security: "RBAC, audit log, encrypted sensitive fields"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - client_nda
+  - access_controls
+  - data_confidentiality

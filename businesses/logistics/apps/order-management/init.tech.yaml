@@ -2,6 +2,7 @@ business: logistics
 app: order-management
 project_name_pattern: "{business}-{app}"
 priority: important
+description: "Order intake, allocation, status tracking, and exception management for logistics operations"
 language_output:
   - en
   - vi
@@ -15,18 +16,35 @@ mode_options:
   - replace_existing
   - new_app
 target_users:
-  - owner
-  - manager
-  - staff
+  - order_coordinator
+  - customer_service_rep
+  - operations_manager
 core_modules:
   - order_intake
-  - allocation
+  - allocation_rules
   - status_tracking
-  - exceptions
+  - exception_management
+  - customer_communication
+  - priority_handling
+  - batch_processing
+  - reporting
+key_user_flows:
+  - Receive order and validate against capacity
+  - Allocate order to warehouse and carrier
+  - Track order through fulfillment stages
+  - Handle exception (delay, damage, shortage)
+  - Notify customer of status updates
+data_entities:
+  - Order
+  - Allocation
+  - StatusEvent
+  - Exception
+  - CommunicationLog
 integrations:
-  - crm
-  - wms
-  - tms
+  - crm (inbound)
+  - wms (bidirectional)
+  - tms (bidirectional)
+  - customer_portal (outbound)
 nfr:
   performance: "P95 API < 400ms for core operations"
   security: "RBAC, audit log, encrypted sensitive fields"
@@ -34,3 +52,4 @@ nfr:
   ai_governance: "Human review required for AI-generated business logic"
 compliance:
   - audit_log
+  - sla_tracking

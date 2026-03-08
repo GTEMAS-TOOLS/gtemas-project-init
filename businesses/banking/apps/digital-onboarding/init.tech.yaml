@@ -1,0 +1,61 @@
+business: banking
+app: digital-onboarding
+project_name_pattern: "{business}-{app}"
+priority: essential
+description: "Customer onboarding with KYC verification, document capture, risk scoring, and approval workflows"
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - customer
+  - kyc_analyst
+  - branch_manager
+  - compliance_officer
+core_modules:
+  - kyc_verification
+  - document_capture_ocr
+  - risk_scoring
+  - approval_workflow
+  - identity_verification
+  - watchlist_screening
+  - digital_signature
+  - application_tracking
+key_user_flows:
+  - Customer submits application with ID documents
+  - OCR extracts data and pre-fills application
+  - Automated KYC check against watchlists
+  - Risk scoring and routing to appropriate approval level
+  - Customer signs digitally and receives confirmation
+data_entities:
+  - Application
+  - Customer
+  - KYCCheck
+  - Document
+  - RiskScore
+  - Approval
+  - WatchlistResult
+integrations:
+  - ekyc_provider (outbound)
+  - crm (outbound)
+  - core_banking_system (outbound)
+  - watchlist_database (outbound)
+  - digital_signature (outbound)
+nfr:
+  performance: "KYC check < 30s, end-to-end onboarding < 15min for digital"
+  security: "End-to-end encryption, biometric verification, SOC2"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - aml_controls
+  - kyc_regulations
+  - privacy_controls
+  - consent_management

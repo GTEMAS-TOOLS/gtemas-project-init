@@ -2,6 +2,7 @@ business: education
 app: admissions-crm
 project_name_pattern: "{business}-{app}"
 priority: important
+description: "Admissions pipeline management from inquiry to enrollment with scholarship workflows"
 language_output:
   - en
   - vi
@@ -15,17 +16,39 @@ mode_options:
   - replace_existing
   - new_app
 target_users:
-  - owner
-  - manager
-  - staff
+  - admissions_officer
+  - marketing_coordinator
+  - scholarship_committee
+  - department_head
 core_modules:
   - lead_capture
   - application_pipeline
-  - communication
+  - communication_automation
   - scholarship_workflow
+  - document_collection
+  - interview_scheduling
+  - reporting_dashboard
+  - campaign_tracking
+key_user_flows:
+  - Capture inquiry from website/event and assign counselor
+  - Track application through review stages
+  - Automate communication at each pipeline stage
+  - Evaluate scholarship applications and award
+  - Report on conversion funnel by source
+data_entities:
+  - Lead
+  - Application
+  - Scholarship
+  - Communication
+  - Document
+  - Interview
+  - Campaign
 integrations:
-  - crm
-  - sis
+  - sis (outbound)
+  - email (outbound)
+  - sms (outbound)
+  - website_form (inbound)
+  - calendar (outbound)
 nfr:
   performance: "P95 API < 400ms for core operations"
   security: "RBAC, audit log, encrypted sensitive fields"
@@ -33,3 +56,5 @@ nfr:
   ai_governance: "Human review required for AI-generated business logic"
 compliance:
   - consent_management
+  - privacy_policy_controls
+  - equal_opportunity

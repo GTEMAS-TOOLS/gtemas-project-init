@@ -2,6 +2,7 @@ business: healthcare
 app: emr-ehr
 project_name_pattern: "{business}-{app}"
 priority: essential
+description: "Electronic medical/health records for clinical documentation and patient history"
 language_output:
   - en
   - vi
@@ -15,25 +16,58 @@ mode_options:
   - replace_existing
   - new_app
 target_users:
-  - owner
-  - manager
-  - staff
+  - physician
+  - nurse
+  - specialist
+  - lab_technician
+  - medical_records_clerk
 core_modules:
   - patient_record
   - clinical_notes
   - orders_results
-  - medication
+  - medication_management
   - care_history
+  - allergy_alerts
+  - vitals_tracking
+  - discharge_summary
+  - referral_management
+  - clinical_decision_support
+key_user_flows:
+  - Patient registration and record creation
+  - Clinical encounter documentation (SOAP notes)
+  - Lab/imaging order placement and result review
+  - Medication prescribing and interaction checking
+  - Referral creation and tracking
+  - Discharge planning and summary generation
+data_entities:
+  - Patient
+  - Encounter
+  - ClinicalNote
+  - Medication
+  - Allergy
+  - LabOrder
+  - LabResult
+  - Vital
+  - Diagnosis
+  - Referral
+  - Provider
 integrations:
-  - lab_system
-  - imaging
-  - insurance
+  - lab_system (bidirectional)
+  - imaging_pacs (inbound)
+  - insurance_payer (outbound)
+  - pharmacy_system (outbound)
+  - appointment_scheduling (bidirectional)
 nfr:
-  performance: "P95 API < 400ms for core operations"
-  security: "RBAC, audit log, encrypted sensitive fields"
-  availability: "99.9% monthly"
+  performance: "P95 API < 300ms, chart load < 2s"
+  security: "End-to-end encryption, field-level access control, audit trail on all PHI access"
+  availability: "99.95% uptime, zero data loss"
   ai_governance: "Human review required for AI-generated business logic"
 compliance:
-  - hipaa_like_controls
-  - audit_log
-  - encryption
+  - hipaa
+  - hl7_fhir
+  - icd10_coding
+  - clinical_data_retention
+tech_stack_hints:
+  - HL7 FHIR R4 API layer
+  - Event-driven architecture for real-time alerts
+  - Document DB or hybrid for clinical notes

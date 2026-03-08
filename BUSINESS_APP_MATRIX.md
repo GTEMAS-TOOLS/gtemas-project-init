@@ -1,7 +1,7 @@
 # Business App Matrix
 
-Generated businesses: 12
-Generated app blueprints: 74
+Generated businesses: 30
+Generated app blueprints: 297
 
 Priority levels:
 - essential: should be implemented first

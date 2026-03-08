@@ -2,6 +2,7 @@ business: hospitality
 app: restaurant-pos
 project_name_pattern: "{business}-{app}"
 priority: essential
+description: "Restaurant POS for table orders, kitchen display, payments, and shift management"
 language_output:
   - en
   - vi
@@ -15,17 +16,41 @@ mode_options:
   - replace_existing
   - new_app
 target_users:
-  - owner
-  - manager
-  - staff
+  - server
+  - cashier
+  - kitchen_staff
+  - fnb_manager
+  - bartender
 core_modules:
-  - table_orders
-  - kitchen_display
-  - payments
-  - shift_close
+  - table_management
+  - order_taking
+  - kitchen_display_system
+  - payment_processing
+  - shift_management
+  - menu_management
+  - split_bills
+  - tip_management
+  - inventory_deduction
+key_user_flows:
+  - Server takes order and sends to kitchen
+  - Kitchen views and manages order queue
+  - Process payment with split bill option
+  - Manager closes shift and reconciles
+  - Update menu items and pricing
+data_entities:
+  - Order
+  - Table
+  - MenuItem
+  - Payment
+  - Shift
+  - KitchenTicket
+  - Bill
+  - InventoryItem
 integrations:
-  - inventory-management
-  - accounting-finance
+  - inventory-management (bidirectional)
+  - accounting-finance (outbound)
+  - payment_terminal (bidirectional)
+  - pms (outbound for room charge)
 nfr:
   performance: "P95 API < 400ms for core operations"
   security: "RBAC, audit log, encrypted sensitive fields"
@@ -33,3 +58,5 @@ nfr:
   ai_governance: "Human review required for AI-generated business logic"
 compliance:
   - tax_controls
+  - food_safety_logging
+  - pci_dss

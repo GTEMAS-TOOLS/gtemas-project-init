@@ -1,0 +1,65 @@
+business: software
+app: talent-management
+project_name_pattern: "{business}-{app}"
+priority: essential
+description: "Engineer skills inventory, career development, bench management, and recruitment pipeline"
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - hr_manager
+  - engineering_manager
+  - recruiter
+  - engineer
+  - cto
+core_modules:
+  - skills_inventory
+  - competency_matrix
+  - career_path_tracking
+  - bench_management
+  - recruitment_pipeline
+  - interview_scheduling
+  - onboarding_workflow
+  - performance_review
+  - training_catalog
+  - retention_analytics
+key_user_flows:
+  - Maintain engineer skills profile and certifications
+  - Match available engineers to project requirements
+  - Track recruitment pipeline from sourcing to offer
+  - Conduct performance review with 360 feedback
+  - Identify flight-risk engineers and trigger retention actions
+data_entities:
+  - Engineer
+  - Skill
+  - Competency
+  - CareerPath
+  - Candidate
+  - Interview
+  - PerformanceReview
+  - Training
+  - BenchRecord
+integrations:
+  - project-delivery (bidirectional)
+  - hris (bidirectional)
+  - job_boards (outbound)
+  - calendar (outbound)
+  - learning_platform (outbound)
+nfr:
+  performance: "P95 API < 400ms for core operations"
+  security: "RBAC, audit log, encrypted sensitive fields"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - labor_regulations
+  - privacy_controls
+  - equal_opportunity

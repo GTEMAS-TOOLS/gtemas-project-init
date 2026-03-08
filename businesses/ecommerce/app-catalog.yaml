@@ -1,0 +1,20 @@
+business: ecommerce
+apps:
+  - app: storefront-commerce
+    priority: essential
+  - app: oms
+    priority: essential
+  - app: marketing-automation
+    priority: important
+  - app: customer-support
+    priority: important
+  - app: returns-refunds
+    priority: important
+  - app: recommendation-personalization
+    priority: advanced
+  - app: crm
+    priority: important
+  - app: accounting-finance
+    priority: important
+  - app: bi-analytics
+    priority: important

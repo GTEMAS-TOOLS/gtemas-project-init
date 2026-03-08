@@ -1,0 +1,57 @@
+business: oil-gas
+app: accounting-finance
+project_name_pattern: "{business}-{app}"
+priority: important
+description: "Financial management with joint venture accounting, production accounting, and regulatory financial reporting"
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - finance_controller
+  - jv_accountant
+  - production_accountant
+  - cfo
+core_modules:
+  - general_ledger
+  - joint_venture_accounting
+  - production_accounting
+  - revenue_distribution
+  - afe_tracking
+  - cost_allocation
+  - financial_reporting
+  - tax_management
+key_user_flows:
+  - Process joint venture billing and netting
+  - Allocate costs to wells and cost centers
+  - Track AFE spending vs approval
+  - Distribute revenue to working interest owners
+  - Prepare regulatory financial reports
+data_entities:
+  - GLAccount
+  - JVBilling
+  - AFE
+  - CostAllocation
+  - RevenueDistribution
+  - TaxRecord
+integrations:
+  - production-management (inbound)
+  - banking (bidirectional)
+  - erp (bidirectional)
+nfr:
+  performance: "P95 API < 400ms for core operations"
+  security: "RBAC, audit log, encrypted sensitive fields"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - joint_venture_audit
+  - tax_compliance
+  - sec_reporting

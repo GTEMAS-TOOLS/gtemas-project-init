@@ -1,0 +1,59 @@
+business: agriculture
+app: crm
+project_name_pattern: "{business}-{app}"
+priority: important
+description: "Customer relationship management for agriculture with lead tracking, pipeline, and engagement"
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - sales_manager
+  - account_executive
+  - marketing_manager
+  - customer_service
+core_modules:
+  - lead_management
+  - account_contact_360
+  - pipeline
+  - campaign_management
+  - customer_service
+  - reporting_dashboard
+  - segmentation
+  - communication_automation
+key_user_flows:
+  - Capture and qualify new lead
+  - Track deal through pipeline stages
+  - Launch marketing campaign to segment
+  - Log customer service ticket
+  - Generate sales performance report
+data_entities:
+  - Lead
+  - Account
+  - Contact
+  - Opportunity
+  - Campaign
+  - Ticket
+  - Activity
+integrations:
+  - email (bidirectional)
+  - sms (outbound)
+  - calendar (bidirectional)
+  - marketing_automation (outbound)
+nfr:
+  performance: "P95 API < 400ms for core operations"
+  security: "RBAC, audit log, encrypted sensitive fields"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - privacy_policy_controls
+  - consent_management
+  - audit_log

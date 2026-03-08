@@ -2,6 +2,7 @@ business: construction
 app: asset-equipment
 project_name_pattern: "{business}-{app}"
 priority: important
+description: "Equipment registry, utilization tracking, maintenance, and cross-site availability"
 language_output:
   - en
   - vi
@@ -15,17 +16,37 @@ mode_options:
   - replace_existing
   - new_app
 target_users:
-  - owner
-  - manager
-  - staff
+  - equipment_manager
+  - site_superintendent
+  - maintenance_technician
+  - logistics_coordinator
 core_modules:
   - equipment_registry
-  - usage_tracking
-  - maintenance
-  - availability
+  - utilization_tracking
+  - maintenance_scheduling
+  - availability_calendar
+  - fuel_consumption
+  - operator_certification
+  - transfer_requests
+  - depreciation_tracking
+key_user_flows:
+  - Register new equipment with specs and certifications
+  - Track utilization hours by project and site
+  - Schedule maintenance based on hours/calendar
+  - Request equipment transfer between sites
+  - Report equipment breakdown and create work order
+data_entities:
+  - Equipment
+  - UtilizationLog
+  - MaintenanceRecord
+  - TransferRequest
+  - OperatorCert
+  - FuelLog
 integrations:
-  - cmms
-  - project-controls
+  - project-controls (outbound)
+  - cmms (bidirectional)
+  - gps_telematics (inbound)
+  - accounting-finance (outbound)
 nfr:
   performance: "P95 API < 400ms for core operations"
   security: "RBAC, audit log, encrypted sensitive fields"
@@ -33,3 +54,5 @@ nfr:
   ai_governance: "Human review required for AI-generated business logic"
 compliance:
   - safety_compliance
+  - equipment_certification
+  - inspection_records

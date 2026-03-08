@@ -2,6 +2,7 @@ business: healthcare
 app: crm
 project_name_pattern: "{business}-{app}"
 priority: important
+description: "Patient relationship management for engagement, referral tracking, outreach campaigns, and care journey coordination"
 language_output:
   - en
   - vi
@@ -15,23 +16,43 @@ mode_options:
   - replace_existing
   - new_app
 target_users:
-  - owner
-  - manager
-  - staff
+  - marketing_manager
+  - patient_coordinator
+  - referral_specialist
+  - administrator
 core_modules:
-  - lead_management
-  - patient_profile_360
-  - care_journey
-  - service_requests
+  - patient_engagement
+  - referral_tracking
+  - campaign_management
+  - care_journey_mapping
+  - satisfaction_surveys
+  - communication_automation
+  - segmentation
   - reporting_dashboard
+key_user_flows:
+  - Track patient referral from source to appointment
+  - Launch targeted outreach campaign to patient segment
+  - Automate appointment reminders and follow-ups
+  - Analyze patient satisfaction survey results
+  - Map care journey touchpoints and measure conversion
+data_entities:
+  - Contact
+  - Referral
+  - Campaign
+  - Journey
+  - Survey
+  - Communication
 integrations:
-  - email
-  - sms
-  - calendar
+  - emr-ehr (inbound)
+  - appointment-scheduling (bidirectional)
+  - email (outbound)
+  - sms (outbound)
 nfr:
   performance: "P95 API < 400ms for core operations"
   security: "RBAC, audit log, encrypted sensitive fields"
   availability: "99.9% monthly"
   ai_governance: "Human review required for AI-generated business logic"
 compliance:
+  - hipaa
+  - consent_management
   - privacy_policy_controls

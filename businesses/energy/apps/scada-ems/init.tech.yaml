@@ -1,0 +1,58 @@
+business: energy
+app: scada-ems
+project_name_pattern: "{business}-{app}"
+priority: essential
+description: "SCADA and energy management for real-time grid monitoring, control, and load balancing"
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - grid_operator
+  - control_center_manager
+  - dispatcher
+  - engineer
+core_modules:
+  - real_time_monitoring
+  - load_dispatch
+  - contingency_analysis
+  - automatic_generation_control
+  - alarm_management
+  - historian
+  - state_estimation
+  - economic_dispatch
+key_user_flows:
+  - Monitor grid status in real-time
+  - Dispatch generation to meet demand
+  - Respond to grid contingency event
+  - Analyze historical load patterns
+  - Manage alarm priorities and escalation
+data_entities:
+  - GridNode
+  - Generator
+  - LoadPoint
+  - Alarm
+  - HistoricalData
+  - Contingency
+  - DispatchOrder
+integrations:
+  - substation_rtu (inbound)
+  - weather_service (inbound)
+  - market_operator (bidirectional)
+nfr:
+  performance: "P95 API < 400ms for core operations"
+  security: "RBAC, audit log, encrypted sensitive fields"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - nerc_cip
+  - operational_audit
+  - cybersecurity

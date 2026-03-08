@@ -2,6 +2,7 @@ business: construction
 app: field-service
 project_name_pattern: "{business}-{app}"
 priority: important
+description: "Field reporting, work assignments, timesheets, and issue tracking for site operations"
 language_output:
   - en
   - vi
@@ -15,17 +16,38 @@ mode_options:
   - replace_existing
   - new_app
 target_users:
-  - owner
-  - manager
-  - staff
+  - site_superintendent
+  - foreman
+  - field_worker
+  - project_manager
 core_modules:
+  - daily_reports
   - work_assignments
-  - field_reports
-  - timesheet
+  - timesheet_capture
   - issue_tracking
+  - photo_documentation
+  - inspection_checklists
+  - weather_delay_logging
+  - subcontractor_coordination
+key_user_flows:
+  - Foreman submits daily field report with photos
+  - Assign work packages to crews
+  - Workers log time via mobile app
+  - Report and track field issues to resolution
+  - Complete inspection checklist with photo evidence
+data_entities:
+  - DailyReport
+  - WorkAssignment
+  - Timesheet
+  - Issue
+  - Inspection
+  - Photo
+  - Crew
 integrations:
-  - mobile_app
-  - project-controls
+  - mobile_app (bidirectional)
+  - project-controls (outbound)
+  - safety-compliance (outbound)
+  - hr_payroll (outbound)
 nfr:
   performance: "P95 API < 400ms for core operations"
   security: "RBAC, audit log, encrypted sensitive fields"
@@ -33,3 +55,5 @@ nfr:
   ai_governance: "Human review required for AI-generated business logic"
 compliance:
   - worksite_audit
+  - labor_compliance
+  - photo_documentation_retention

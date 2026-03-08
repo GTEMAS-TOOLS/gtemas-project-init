@@ -1,0 +1,63 @@
+business: banking
+app: fraud-monitoring
+project_name_pattern: "{business}-{app}"
+priority: advanced
+description: "Real-time fraud detection with rules engine, alerts, investigation, and case link analysis"
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - fraud_analyst
+  - fraud_manager
+  - compliance_officer
+  - investigation_team
+core_modules:
+  - rule_engine
+  - real_time_alerts
+  - investigation_workflow
+  - case_link_analysis
+  - machine_learning_scoring
+  - watchlist_integration
+  - sar_filing
+  - reporting_dashboard
+key_user_flows:
+  - Real-time transaction triggers fraud alert
+  - Analyst reviews alert and opens investigation
+  - Link analysis connects related suspicious cases
+  - File Suspicious Activity Report (SAR)
+  - Tune fraud rules based on false positive analysis
+data_entities:
+  - Alert
+  - FraudCase
+  - Transaction
+  - RuleSet
+  - Investigation
+  - SAR
+  - MLModel
+integrations:
+  - core_banking_system (inbound)
+  - risk-compliance (outbound)
+  - watchlist_database (outbound)
+  - law_enforcement_api (outbound)
+nfr:
+  performance: "P95 API < 400ms for core operations"
+  security: "RBAC, audit log, encrypted sensitive fields"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - aml_controls
+  - sar_filing_regulations
+  - audit_log
+tech_stack_hints:
+  - Real-time stream processing for transaction monitoring
+  - Graph database for link analysis
+  - ML model serving for scoring

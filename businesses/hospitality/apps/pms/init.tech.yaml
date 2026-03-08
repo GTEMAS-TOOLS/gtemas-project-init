@@ -2,6 +2,7 @@ business: hospitality
 app: pms
 project_name_pattern: "{business}-{app}"
 priority: essential
+description: "Property management system for reservations, check-in/out, room inventory, and folio billing"
 language_output:
   - en
   - vi
@@ -15,17 +16,41 @@ mode_options:
   - replace_existing
   - new_app
 target_users:
-  - owner
-  - manager
-  - staff
+  - front_desk_agent
+  - reservations_manager
+  - general_manager
+  - night_auditor
 core_modules:
-  - reservation
+  - reservation_management
   - checkin_checkout
   - room_inventory
   - folio_billing
+  - guest_profile
+  - night_audit
+  - group_bookings
+  - rate_management
+  - reporting_dashboard
+key_user_flows:
+  - Create reservation and assign room type
+  - Check-in guest with ID verification
+  - Post charges to guest folio during stay
+  - Run night audit and close day
+  - Check-out guest and process payment
+data_entities:
+  - Reservation
+  - Room
+  - Guest
+  - Folio
+  - Charge
+  - RoomType
+  - Rate
+  - GroupBlock
 integrations:
-  - channel_manager
-  - payment_gateway
+  - channel_manager (bidirectional)
+  - payment_gateway (bidirectional)
+  - housekeeping-operations (bidirectional)
+  - revenue-management (inbound)
+  - booking-engine (inbound)
 nfr:
   performance: "P95 API < 400ms for core operations"
   security: "RBAC, audit log, encrypted sensitive fields"
@@ -33,3 +58,5 @@ nfr:
   ai_governance: "Human review required for AI-generated business logic"
 compliance:
   - audit_log
+  - guest_data_privacy
+  - tax_controls

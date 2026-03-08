@@ -1,0 +1,58 @@
+business: healthcare
+app: bi-analytics
+project_name_pattern: "{business}-{app}"
+priority: important
+description: "Clinical and operational dashboards, KPI monitoring, and self-service reporting for healthcare data"
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - administrator
+  - medical_director
+  - quality_officer
+  - finance_controller
+core_modules:
+  - kpi_dashboard
+  - self_service_reports
+  - data_models
+  - alerts
+  - clinical_quality_metrics
+  - operational_benchmarking
+  - population_health_analytics
+  - financial_analytics
+key_user_flows:
+  - Monitor daily operational KPIs on dashboard
+  - Build ad-hoc report for quality committee
+  - Track clinical quality measures for reporting
+  - Analyze financial performance by department
+  - Set up automated alerts for metric thresholds
+data_entities:
+  - Dashboard
+  - Report
+  - KPI
+  - DataModel
+  - Alert
+  - Benchmark
+integrations:
+  - emr-ehr (inbound)
+  - billing-rcm (inbound)
+  - data_warehouse (bidirectional)
+  - accounting-finance (inbound)
+nfr:
+  performance: "P95 API < 400ms for core operations"
+  security: "RBAC, audit log, encrypted sensitive fields"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - role_based_access
+  - hipaa
+  - audit_log

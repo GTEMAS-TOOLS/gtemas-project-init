@@ -2,6 +2,7 @@ business: manufacturing
 app: mes
 project_name_pattern: "{business}-{app}"
 priority: essential
+description: "Manufacturing execution for real-time shopfloor tracking, work order execution, and quality checks"
 language_output:
   - en
   - vi
@@ -15,21 +16,49 @@ mode_options:
   - replace_existing
   - new_app
 target_users:
-  - owner
-  - manager
-  - staff
+  - shopfloor_operator
+  - production_supervisor
+  - quality_inspector
+  - plant_manager
 core_modules:
   - work_order_execution
   - shopfloor_tracking
-  - quality_checks
+  - quality_inline_checks
   - traceability
+  - oee_monitoring
+  - operator_dashboard
+  - downtime_logging
+  - batch_genealogy
+key_user_flows:
+  - Operator starts work order and scans materials
+  - Record inline quality check results
+  - Log downtime event with reason code
+  - Supervisor views real-time OEE dashboard
+  - Trace batch genealogy for recall investigation
+data_entities:
+  - WorkOrder
+  - Operation
+  - QualityCheck
+  - DowntimeEvent
+  - Batch
+  - Machine
+  - Operator
+  - TraceabilityRecord
 integrations:
-  - erp
-  - iot_devices
+  - erp (bidirectional)
+  - iot_sensors (inbound)
+  - plc_scada (inbound)
+  - qms (outbound)
 nfr:
-  performance: "P95 API < 400ms for core operations"
-  security: "RBAC, audit log, encrypted sensitive fields"
-  availability: "99.9% monthly"
+  performance: "Real-time data capture < 1s latency from shopfloor"
+  security: "RBAC per station, audit trail on all production data"
+  availability: "99.95% during production hours"
   ai_governance: "Human review required for AI-generated business logic"
 compliance:
   - traceability_controls
+  - gmp_if_applicable
+  - iso9001
+tech_stack_hints:
+  - Event-driven architecture for real-time shopfloor events
+  - Edge computing for low-latency data capture
+  - Time-series DB for sensor data

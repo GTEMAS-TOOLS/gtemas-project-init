@@ -1,0 +1,56 @@
+business: semiconductor
+app: equipment-maintenance
+project_name_pattern: "{business}-{app}"
+priority: important
+description: "equipment maintenance for semiconductor operations"
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - manager
+  - specialist
+  - analyst
+  - operator
+core_modules:
+  - equipment_maintenance_core
+  - workflow_management
+  - reporting
+  - configuration
+  - audit_tracking
+  - notifications
+  - search
+  - integrations
+key_user_flows:
+  - Create new equipment maintenance record
+  - Review and approve equipment maintenance items
+  - Generate equipment maintenance report
+  - Track equipment maintenance KPIs
+  - Manage equipment maintenance configuration
+data_entities:
+  - Record
+  - Activity
+  - Report
+  - Configuration
+  - AuditLog
+integrations:
+  - erp (bidirectional)
+  - email (outbound)
+  - reporting (outbound)
+nfr:
+  performance: "P95 API < 400ms for core operations"
+  security: "RBAC, audit log, encrypted sensitive fields"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - audit_log
+  - access_controls
+  - data_governance

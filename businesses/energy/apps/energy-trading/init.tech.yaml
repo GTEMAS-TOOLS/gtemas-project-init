@@ -1,0 +1,57 @@
+business: energy
+app: energy-trading
+project_name_pattern: "{business}-{app}"
+priority: important
+description: "Wholesale energy market trading, position management, risk analytics, and settlement"
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - energy_trader
+  - risk_analyst
+  - settlement_analyst
+  - trading_manager
+core_modules:
+  - trade_capture
+  - position_management
+  - risk_analytics
+  - market_data_feeds
+  - settlement_processing
+  - contract_management
+  - regulatory_reporting
+  - pnl_attribution
+key_user_flows:
+  - Capture bilateral or exchange trade
+  - Monitor portfolio position and mark-to-market
+  - Calculate value-at-risk and stress scenarios
+  - Process settlement with market operator
+  - Generate regulatory transaction reports
+data_entities:
+  - Trade
+  - Position
+  - Contract
+  - MarketPrice
+  - Settlement
+  - RiskMetric
+integrations:
+  - market_operator (bidirectional)
+  - scada-ems (inbound)
+  - accounting-finance (outbound)
+nfr:
+  performance: "P95 API < 400ms for core operations"
+  security: "RBAC, audit log, encrypted sensitive fields"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - ferc_reporting
+  - market_manipulation_monitoring
+  - position_limits

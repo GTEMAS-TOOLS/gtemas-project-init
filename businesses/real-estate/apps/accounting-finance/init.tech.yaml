@@ -1,0 +1,60 @@
+business: real-estate
+app: accounting-finance
+project_name_pattern: "{business}-{app}"
+priority: important
+description: "General ledger, AP/AR, financial reporting, and budgeting for real-estate"
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - finance_controller
+  - accountant
+  - cfo
+  - accounts_payable_clerk
+core_modules:
+  - general_ledger
+  - accounts_payable
+  - accounts_receivable
+  - cashflow_management
+  - financial_reporting
+  - budget_management
+  - cost_center_tracking
+  - tax_management
+key_user_flows:
+  - Record and post journal entries
+  - Process vendor invoices and payments
+  - Generate monthly financial statements
+  - Manage budgets and forecasts
+  - Prepare tax filings and audit
+data_entities:
+  - GLAccount
+  - JournalEntry
+  - Invoice
+  - Payment
+  - Budget
+  - CostCenter
+  - TaxRecord
+  - FinancialReport
+integrations:
+  - banking (bidirectional)
+  - payment_gateway (bidirectional)
+  - einvoice (outbound)
+  - payroll (inbound)
+nfr:
+  performance: "P95 API < 400ms for core operations"
+  security: "RBAC, audit log, encrypted sensitive fields"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - audit_log
+  - tax_compliance
+  - gaap_ifrs

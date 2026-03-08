@@ -2,6 +2,7 @@ business: education
 app: lms
 project_name_pattern: "{business}-{app}"
 priority: essential
+description: "Learning management system for course content delivery, assignments, grading, and learning analytics"
 language_output:
   - en
   - vi
@@ -15,21 +16,49 @@ mode_options:
   - replace_existing
   - new_app
 target_users:
-  - owner
-  - manager
-  - staff
+  - instructor
+  - student
+  - curriculum_designer
+  - academic_director
 core_modules:
-  - course_content
-  - assignments
-  - grading
+  - course_content_management
+  - assignments_quizzes
+  - grading_rubrics
   - learning_analytics
+  - discussion_forums
+  - video_lectures
+  - progress_tracking
+  - certificate_issuance
+key_user_flows:
+  - Instructor creates course with modules and assignments
+  - Student accesses course content and submits work
+  - Auto-grade quiz and update gradebook
+  - Instructor reviews analytics and adjusts curriculum
+  - Issue completion certificate
+data_entities:
+  - Course
+  - Module
+  - Assignment
+  - Submission
+  - Grade
+  - LearningPath
+  - Certificate
+  - AnalyticsEvent
 integrations:
-  - sis
-  - video_platform
+  - sis (bidirectional)
+  - video_platform (outbound)
+  - plagiarism_checker (outbound)
+  - calendar (outbound)
 nfr:
   performance: "P95 API < 400ms for core operations"
   security: "RBAC, audit log, encrypted sensitive fields"
   availability: "99.9% monthly"
   ai_governance: "Human review required for AI-generated business logic"
 compliance:
-  - accessibility_controls
+  - accessibility_wcag
+  - scorm_xapi
+  - student_data_privacy
+tech_stack_hints:
+  - SCORM/xAPI compliance for content packages
+  - Video streaming integration
+  - Mobile-responsive design

@@ -2,6 +2,7 @@ business: hospitality
 app: housekeeping-operations
 project_name_pattern: "{business}-{app}"
 priority: important
+description: "Room status management, task assignment, maintenance requests, and quality inspections"
 language_output:
   - en
   - vi
@@ -15,16 +16,36 @@ mode_options:
   - replace_existing
   - new_app
 target_users:
-  - owner
-  - manager
-  - staff
+  - housekeeping_supervisor
+  - room_attendant
+  - maintenance_worker
+  - front_desk_agent
 core_modules:
-  - room_status
+  - room_status_board
   - task_assignment
   - maintenance_requests
+  - quality_inspection
+  - minibar_tracking
+  - lost_found
+  - linen_management
+  - mobile_updates
+key_user_flows:
+  - Update room status after cleaning
+  - Assign rooms to attendants based on priority
+  - Report maintenance issue from room
+  - Supervisor conducts quality inspection
+  - Track lost and found items
+data_entities:
+  - RoomStatus
+  - Task
+  - MaintenanceRequest
+  - Inspection
+  - LostFoundItem
+  - LinenCount
 integrations:
-  - pms
-  - mobile_app
+  - pms (bidirectional)
+  - mobile_app (bidirectional)
+  - maintenance_system (outbound)
 nfr:
   performance: "P95 API < 400ms for core operations"
   security: "RBAC, audit log, encrypted sensitive fields"
@@ -32,3 +53,4 @@ nfr:
   ai_governance: "Human review required for AI-generated business logic"
 compliance:
   - audit_trail
+  - quality_standards

@@ -1,0 +1,57 @@
+business: consulting
+app: knowledge-management
+project_name_pattern: "{business}-{app}"
+priority: important
+description: "Institutional knowledge base with playbooks, templates, search, and approval workflows"
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - consultant
+  - manager
+  - knowledge_manager
+  - partner
+core_modules:
+  - playbook_library
+  - template_repository
+  - full_text_search
+  - tagging_categorization
+  - approval_workflow
+  - version_control
+  - usage_analytics
+  - contribution_tracking
+key_user_flows:
+  - Search for relevant playbook or past deliverable
+  - Contribute new template or case study
+  - Approve knowledge item for firm-wide publication
+  - Track most-used resources and identify gaps
+  - Onboard new employee with curated content
+data_entities:
+  - KnowledgeItem
+  - Playbook
+  - Template
+  - Tag
+  - Contribution
+  - UsageMetric
+integrations:
+  - document-management (bidirectional)
+  - search_engine (bidirectional)
+  - collaboration_tool (inbound)
+nfr:
+  performance: "P95 API < 400ms for core operations"
+  security: "RBAC, audit log, encrypted sensitive fields"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - retention_policy
+  - client_confidentiality
+  - ip_protection

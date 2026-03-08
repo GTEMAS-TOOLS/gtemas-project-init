@@ -1,0 +1,58 @@
+business: energy
+app: bi-analytics
+project_name_pattern: "{business}-{app}"
+priority: important
+description: "Operational and financial dashboards, grid analytics, and regulatory reporting analytics for energy"
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - executive
+  - grid_analyst
+  - finance_analyst
+  - operations_manager
+core_modules:
+  - kpi_dashboard
+  - grid_performance_analytics
+  - financial_analytics
+  - outage_analytics
+  - customer_analytics
+  - regulatory_metrics
+  - predictive_models
+  - data_connectors
+key_user_flows:
+  - Monitor grid reliability KPIs
+  - Analyze outage patterns and root causes
+  - Track financial performance vs budget
+  - Generate regulatory performance metrics
+  - Build predictive model for demand forecasting
+data_entities:
+  - Dashboard
+  - Report
+  - KPI
+  - DataModel
+  - Alert
+  - Prediction
+integrations:
+  - scada-ems (inbound)
+  - meter-data-management (inbound)
+  - accounting-finance (inbound)
+  - data_warehouse (bidirectional)
+nfr:
+  performance: "P95 API < 400ms for core operations"
+  security: "RBAC, audit log, encrypted sensitive fields"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - data_governance
+  - role_based_access
+  - audit_log

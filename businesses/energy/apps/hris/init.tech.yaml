@@ -1,0 +1,57 @@
+business: energy
+app: hris
+project_name_pattern: "{business}-{app}"
+priority: important
+description: "HR management for energy workforce including safety certifications, shift scheduling, and union compliance"
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - hr_manager
+  - payroll_officer
+  - safety_trainer
+  - employee
+core_modules:
+  - employee_profile
+  - attendance_tracking
+  - payroll_processing
+  - leave_management
+  - safety_certification
+  - shift_scheduling
+  - union_management
+  - compliance_training
+key_user_flows:
+  - Onboard employee with safety certifications
+  - Schedule field crew shifts
+  - Process payroll with union rates
+  - Track safety training compliance
+  - Manage certification renewals
+data_entities:
+  - Employee
+  - Attendance
+  - PayrollRecord
+  - Certification
+  - Shift
+  - TrainingRecord
+integrations:
+  - biometric_device (inbound)
+  - payroll_provider (outbound)
+  - safety_system (bidirectional)
+nfr:
+  performance: "P95 API < 400ms for core operations"
+  security: "RBAC, audit log, encrypted sensitive fields"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - labor_regulations
+  - safety_training_compliance
+  - union_agreements

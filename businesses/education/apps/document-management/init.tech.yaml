@@ -1,0 +1,59 @@
+business: education
+app: document-management
+project_name_pattern: "{business}-{app}"
+priority: support
+description: "Document repository with approval workflows, versioning, and retention for education"
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - administrator
+  - compliance_officer
+  - department_head
+  - staff
+core_modules:
+  - document_repository
+  - approval_workflow
+  - versioning
+  - search
+  - retention_policy
+  - access_controls
+  - template_management
+  - audit_trail
+key_user_flows:
+  - Upload and categorize document
+  - Route for multi-level approval
+  - Search historical documents
+  - Enforce retention schedule
+  - Generate audit trail report
+data_entities:
+  - Document
+  - Folder
+  - Version
+  - Approval
+  - RetentionRule
+  - AuditRecord
+  - Template
+integrations:
+  - esign (outbound)
+  - cloud_storage (bidirectional)
+  - email (outbound)
+  - erp (bidirectional)
+nfr:
+  performance: "P95 API < 400ms for core operations"
+  security: "RBAC, audit log, encrypted sensitive fields"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - retention_policy
+  - audit_trail
+  - access_controls

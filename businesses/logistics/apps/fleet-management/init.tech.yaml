@@ -2,6 +2,7 @@ business: logistics
 app: fleet-management
 project_name_pattern: "{business}-{app}"
 priority: important
+description: "Fleet tracking, maintenance scheduling, fuel management, and driver compliance"
 language_output:
   - en
   - vi
@@ -15,17 +16,38 @@ mode_options:
   - replace_existing
   - new_app
 target_users:
-  - owner
-  - manager
-  - staff
+  - fleet_manager
+  - driver
+  - maintenance_coordinator
+  - safety_officer
 core_modules:
   - vehicle_registry
-  - maintenance
+  - gps_tracking
+  - maintenance_scheduling
   - fuel_tracking
   - driver_management
+  - compliance_documents
+  - utilization_reporting
+  - incident_logging
+key_user_flows:
+  - Track vehicle location and status in real-time
+  - Schedule preventive maintenance by mileage/date
+  - Record fuel transactions and analyze consumption
+  - Manage driver licenses, certifications, and hours
+  - Log and investigate fleet incidents
+data_entities:
+  - Vehicle
+  - Driver
+  - MaintenanceRecord
+  - FuelTransaction
+  - GPSPosition
+  - Incident
+  - ComplianceDoc
 integrations:
-  - gps_telematics
-  - tms
+  - gps_telematics (inbound)
+  - tms (bidirectional)
+  - fuel_card_provider (inbound)
+  - hr_system (inbound)
 nfr:
   performance: "P95 API < 400ms for core operations"
   security: "RBAC, audit log, encrypted sensitive fields"
@@ -33,3 +55,5 @@ nfr:
   ai_governance: "Human review required for AI-generated business logic"
 compliance:
   - fleet_safety_controls
+  - driver_hours_regulations
+  - vehicle_inspection

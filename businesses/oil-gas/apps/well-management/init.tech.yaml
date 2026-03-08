@@ -1,0 +1,58 @@
+business: oil-gas
+app: well-management
+project_name_pattern: "{business}-{app}"
+priority: essential
+description: "Drilling planning, well construction, completion tracking, and well integrity management"
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - drilling_engineer
+  - completions_engineer
+  - well_integrity_manager
+  - geologist
+core_modules:
+  - well_planning
+  - drilling_operations
+  - completion_tracking
+  - well_integrity
+  - cost_tracking
+  - mud_logging
+  - casing_design
+  - directional_drilling
+key_user_flows:
+  - Plan well trajectory and casing program
+  - Track drilling progress vs plan in real-time
+  - Record completion and stimulation operations
+  - Monitor well integrity and schedule inspections
+  - Analyze drilling cost per foot vs AFE
+data_entities:
+  - Well
+  - DrillingProgram
+  - Completion
+  - IntegrityTest
+  - CostRecord
+  - MudLog
+  - CasingRecord
+integrations:
+  - production-management (outbound)
+  - geological_model (inbound)
+  - erp (outbound)
+nfr:
+  performance: "P95 API < 400ms for core operations"
+  security: "RBAC, audit log, encrypted sensitive fields"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - well_construction_standards
+  - regulatory_permits
+  - integrity_management

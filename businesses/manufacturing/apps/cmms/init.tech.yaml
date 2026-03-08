@@ -2,6 +2,7 @@ business: manufacturing
 app: cmms
 project_name_pattern: "{business}-{app}"
 priority: important
+description: "Computerized maintenance management for asset tracking, PM schedules, and spare parts"
 language_output:
   - en
   - vi
@@ -15,17 +16,38 @@ mode_options:
   - replace_existing
   - new_app
 target_users:
-  - owner
-  - manager
-  - staff
+  - maintenance_engineer
+  - maintenance_planner
+  - technician
+  - plant_manager
 core_modules:
   - asset_registry
   - preventive_maintenance
   - work_orders
-  - spare_parts
+  - spare_parts_inventory
+  - failure_analysis
+  - predictive_maintenance_alerts
+  - maintenance_calendar
+  - mtbf_mttr_tracking
+key_user_flows:
+  - Schedule preventive maintenance based on hours/calendar
+  - Create emergency work order for breakdown
+  - Track spare parts consumption and reorder
+  - Analyze failure patterns for root cause
+  - Review MTBF/MTTR trends by equipment
+data_entities:
+  - Asset
+  - MaintenanceOrder
+  - SparePart
+  - FailureRecord
+  - PMSchedule
+  - Technician
+  - DowntimeLog
 integrations:
-  - erp
-  - iot_devices
+  - erp (bidirectional)
+  - iot_sensors (inbound)
+  - mes (inbound)
+  - procurement (outbound)
 nfr:
   performance: "P95 API < 400ms for core operations"
   security: "RBAC, audit log, encrypted sensitive fields"
@@ -33,3 +55,4 @@ nfr:
   ai_governance: "Human review required for AI-generated business logic"
 compliance:
   - safety_compliance
+  - equipment_certification

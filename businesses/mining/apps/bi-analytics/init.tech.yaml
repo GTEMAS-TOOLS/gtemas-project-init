@@ -1,0 +1,58 @@
+business: mining
+app: bi-analytics
+project_name_pattern: "{business}-{app}"
+priority: important
+description: "Mining operations dashboards, equipment analytics, safety metrics, and production reconciliation"
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - executive
+  - mine_analyst
+  - safety_analyst
+  - operations_manager
+core_modules:
+  - production_dashboard
+  - equipment_analytics
+  - safety_dashboard
+  - cost_analytics
+  - environmental_metrics
+  - grade_reconciliation
+  - predictive_maintenance
+  - executive_reporting
+key_user_flows:
+  - Monitor daily production vs plan on dashboard
+  - Analyze equipment utilization and availability trends
+  - Track safety leading indicators and near-miss rates
+  - Reconcile predicted vs actual ore grades mined
+  - Generate executive operational summary report
+data_entities:
+  - Dashboard
+  - Report
+  - KPI
+  - Prediction
+  - Benchmark
+  - GradeReconciliation
+integrations:
+  - mine-planning (inbound)
+  - fleet-dispatch (inbound)
+  - safety-management (inbound)
+  - data_warehouse (bidirectional)
+nfr:
+  performance: "P95 API < 400ms for core operations"
+  security: "RBAC, audit log, encrypted sensitive fields"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - data_governance
+  - role_based_access
+  - audit_log

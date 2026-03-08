@@ -1,0 +1,57 @@
+business: healthcare
+app: clinical-decision-support
+project_name_pattern: "{business}-{app}"
+priority: advanced
+description: "Evidence-based clinical guidance, drug interaction alerts, diagnostic support, and care protocol management"
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - physician
+  - nurse
+  - pharmacist
+  - clinical_informaticist
+core_modules:
+  - drug_interaction_checker
+  - diagnostic_support
+  - care_protocol_engine
+  - clinical_alerts
+  - evidence_library
+  - order_set_management
+  - clinical_scoring_tools
+  - integration_with_emr
+key_user_flows:
+  - Alert physician about drug interaction during prescribing
+  - Suggest differential diagnosis based on symptoms
+  - Apply care protocol to patient order set
+  - Review evidence-based guidelines for treatment
+  - Track alert override rates for quality improvement
+data_entities:
+  - ClinicalAlert
+  - DrugInteraction
+  - CareProtocol
+  - DiagnosticSuggestion
+  - OrderSet
+  - EvidenceArticle
+integrations:
+  - emr-ehr (bidirectional)
+  - pharmacy_system (bidirectional)
+  - medical_knowledge_base (inbound)
+nfr:
+  performance: "P95 API < 400ms for core operations"
+  security: "RBAC, audit log, encrypted sensitive fields"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - clinical_validation
+  - hipaa
+  - fda_clinical_software

@@ -1,0 +1,59 @@
+business: ecommerce
+app: customer-support
+project_name_pattern: "{business}-{app}"
+priority: important
+description: "Omnichannel customer support with ticketing, live chat, knowledge base, and SLA tracking"
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - support_agent
+  - support_manager
+  - customer
+  - chatbot
+core_modules:
+  - ticket_management
+  - live_chat
+  - chatbot_ai
+  - knowledge_base
+  - sla_tracking
+  - canned_responses
+  - customer_history
+  - satisfaction_surveys
+  - escalation_rules
+key_user_flows:
+  - Customer contacts support via chat/email/phone
+  - Agent views customer order history and resolves issue
+  - Chatbot handles common questions automatically
+  - Escalate complex issues to senior agent
+  - Customer rates support interaction
+data_entities:
+  - Ticket
+  - Conversation
+  - KBArticle
+  - SLARecord
+  - CustomerHistory
+  - SatisfactionSurvey
+integrations:
+  - crm (bidirectional)
+  - oms (inbound)
+  - storefront-commerce (inbound)
+  - chat_sdk (bidirectional)
+nfr:
+  performance: "P95 API < 400ms for core operations"
+  security: "RBAC, audit log, encrypted sensitive fields"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - audit_trail
+  - privacy_controls
+  - contact_regulations

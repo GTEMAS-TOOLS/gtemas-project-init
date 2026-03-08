@@ -2,6 +2,7 @@ business: manufacturing
 app: erp
 project_name_pattern: "{business}-{app}"
 priority: essential
+description: "Enterprise resource planning for production, procurement, inventory, and finance"
 language_output:
   - en
   - vi
@@ -15,18 +16,40 @@ mode_options:
   - replace_existing
   - new_app
 target_users:
-  - owner
-  - manager
-  - staff
+  - plant_manager
+  - production_planner
+  - procurement_officer
+  - finance_controller
 core_modules:
   - production_planning
+  - mrp
   - procurement
-  - inventory
-  - finance
+  - inventory_management
+  - finance_gl_ap_ar
+  - sales_orders
+  - bom_management
+  - cost_accounting
+  - supplier_management
+key_user_flows:
+  - Create production order from sales forecast
+  - Run MRP to generate purchase requisitions
+  - Receive goods and update inventory
+  - Post production output and calculate cost
+  - Generate financial reports and close period
+data_entities:
+  - ProductionOrder
+  - BillOfMaterial
+  - PurchaseOrder
+  - Inventory
+  - Supplier
+  - CostCenter
+  - SalesOrder
+  - GLAccount
 integrations:
-  - mes
-  - wms
-  - crm
+  - mes (bidirectional)
+  - wms (bidirectional)
+  - crm (inbound)
+  - accounting_system (outbound)
 nfr:
   performance: "P95 API < 400ms for core operations"
   security: "RBAC, audit log, encrypted sensitive fields"
@@ -34,3 +57,5 @@ nfr:
   ai_governance: "Human review required for AI-generated business logic"
 compliance:
   - audit_log
+  - sox_controls
+  - tax_compliance

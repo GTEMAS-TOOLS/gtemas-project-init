@@ -1,0 +1,57 @@
+business: energy
+app: regulatory-reporting
+project_name_pattern: "{business}-{app}"
+priority: important
+description: "Automated regulatory filing, tariff management, and compliance tracking for energy regulators"
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - regulatory_analyst
+  - compliance_officer
+  - finance_controller
+  - legal_counsel
+core_modules:
+  - filing_management
+  - tariff_tracking
+  - compliance_calendar
+  - data_collection
+  - report_generation
+  - audit_trail
+  - rate_case_management
+  - environmental_reporting
+key_user_flows:
+  - Prepare and submit regulatory filing
+  - Track tariff changes and effective dates
+  - Monitor compliance calendar deadlines
+  - Collect data from multiple systems for report
+  - Manage rate case documentation and submissions
+data_entities:
+  - Filing
+  - Tariff
+  - ComplianceItem
+  - Report
+  - RateCase
+  - EnvironmentalMetric
+integrations:
+  - scada-ems (inbound)
+  - accounting-finance (inbound)
+  - document-management (bidirectional)
+nfr:
+  performance: "P95 API < 400ms for core operations"
+  security: "RBAC, audit log, encrypted sensitive fields"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - regulatory_filing_deadlines
+  - data_accuracy
+  - audit_trail

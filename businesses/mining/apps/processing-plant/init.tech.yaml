@@ -1,0 +1,58 @@
+business: mining
+app: processing-plant
+project_name_pattern: "{business}-{app}"
+priority: important
+description: "Mineral processing plant operations, throughput monitoring, recovery optimization, and quality control"
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - plant_manager
+  - metallurgist
+  - process_engineer
+  - quality_controller
+core_modules:
+  - throughput_monitoring
+  - recovery_tracking
+  - quality_assurance
+  - reagent_management
+  - energy_monitoring
+  - process_control
+  - laboratory_interface
+  - performance_optimization
+key_user_flows:
+  - Monitor plant throughput and recovery rate in real-time
+  - Adjust process parameters for ore grade variability
+  - Track reagent consumption against budget
+  - Interface with lab system for assay results
+  - Optimize energy consumption per tonne processed
+data_entities:
+  - ProcessUnit
+  - ThroughputRecord
+  - RecoveryMetric
+  - QualitySample
+  - ReagentUsage
+  - EnergyRecord
+integrations:
+  - mine-planning (inbound)
+  - laboratory (bidirectional)
+  - dcs_system (bidirectional)
+  - iot_sensors (inbound)
+nfr:
+  performance: "P95 API < 400ms for core operations"
+  security: "RBAC, audit log, encrypted sensitive fields"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - process_safety
+  - environmental_discharge
+  - quality_standards

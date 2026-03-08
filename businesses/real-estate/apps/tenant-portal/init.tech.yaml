@@ -2,6 +2,7 @@ business: real-estate
 app: tenant-portal
 project_name_pattern: "{business}-{app}"
 priority: important
+description: "Tenant self-service portal for requests, payments, notices, and document access"
 language_output:
   - en
   - vi
@@ -15,17 +16,36 @@ mode_options:
   - replace_existing
   - new_app
 target_users:
-  - owner
-  - manager
-  - staff
+  - tenant
+  - property_manager
+  - finance_team
 core_modules:
-  - service_requests
-  - payments
-  - notices
-  - documents
+  - service_request_submission
+  - online_payment
+  - notice_board
+  - document_access
+  - community_events
+  - feedback_surveys
+  - profile_management
+  - communication_center
+key_user_flows:
+  - Submit maintenance request with photos
+  - Pay rent online and view payment history
+  - View notices and community announcements
+  - Access lease documents and receipts
+  - Provide feedback via survey
+data_entities:
+  - ServiceRequest
+  - Payment
+  - Notice
+  - Document
+  - Feedback
+  - TenantProfile
 integrations:
-  - property-management
-  - payment_gateway
+  - property-management (bidirectional)
+  - payment_gateway (bidirectional)
+  - facility-maintenance (outbound)
+  - email (outbound)
 nfr:
   performance: "P95 API < 400ms for core operations"
   security: "RBAC, audit log, encrypted sensitive fields"
@@ -33,3 +53,5 @@ nfr:
   ai_governance: "Human review required for AI-generated business logic"
 compliance:
   - consent_management
+  - privacy_policy_controls
+  - accessibility_wcag

@@ -1,0 +1,58 @@
+business: mining
+app: environmental-monitoring
+project_name_pattern: "{business}-{app}"
+priority: important
+description: "Environmental compliance tracking, water management, tailings monitoring, dust control, and reclamation planning"
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - environmental_manager
+  - compliance_officer
+  - water_engineer
+  - reclamation_specialist
+core_modules:
+  - emissions_tracking
+  - water_quality_monitoring
+  - tailings_management
+  - dust_monitoring
+  - biodiversity_tracking
+  - reclamation_planning
+  - regulatory_reporting
+  - community_engagement
+key_user_flows:
+  - Monitor water quality at discharge and diversion points
+  - Track tailings dam levels and stability indicators
+  - Report air emissions data to environmental regulator
+  - Plan and track progressive reclamation activities
+  - Document community engagement meetings and commitments
+data_entities:
+  - EnvironmentalSample
+  - TailingsRecord
+  - EmissionRecord
+  - ReclamationPlan
+  - ComplianceReport
+  - WaterBalance
+integrations:
+  - iot_sensors (inbound)
+  - weather_service (inbound)
+  - regulatory_portal (outbound)
+  - gis (bidirectional)
+nfr:
+  performance: "P95 API < 400ms for core operations"
+  security: "RBAC, audit log, encrypted sensitive fields"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - environmental_permits
+  - tailings_safety_regulations
+  - reclamation_obligations

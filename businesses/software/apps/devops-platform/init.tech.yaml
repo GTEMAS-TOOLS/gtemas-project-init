@@ -1,0 +1,67 @@
+business: software
+app: devops-platform
+project_name_pattern: "{business}-{app}"
+priority: important
+description: "CI/CD pipeline management, environment provisioning, monitoring, and infrastructure-as-code for client projects"
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - devops_engineer
+  - tech_lead
+  - developer
+  - qa_engineer
+core_modules:
+  - ci_cd_pipeline
+  - environment_provisioning
+  - infrastructure_as_code
+  - monitoring_alerting
+  - log_management
+  - secret_management
+  - deployment_tracking
+  - cost_monitoring
+  - container_orchestration
+key_user_flows:
+  - Set up CI/CD pipeline for new project
+  - Provision staging/production environments
+  - Deploy new version with rollback capability
+  - Monitor application health and respond to alerts
+  - Review cloud infrastructure costs by project
+data_entities:
+  - Pipeline
+  - Environment
+  - Deployment
+  - Alert
+  - InfraResource
+  - Secret
+  - CostRecord
+  - LogEntry
+integrations:
+  - git_repository (bidirectional)
+  - cloud_provider (bidirectional)
+  - monitoring_tools (bidirectional)
+  - ticketing_system (outbound)
+  - container_registry (bidirectional)
+nfr:
+  performance: "P95 API < 400ms for core operations"
+  security: "RBAC, audit log, encrypted sensitive fields"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - security_scanning
+  - access_controls
+  - deployment_audit_trail
+tech_stack_hints:
+  - GitOps workflow
+  - Kubernetes/Docker orchestration
+  - IaC with Terraform/Pulumi
+  - Observability stack (metrics, logs, traces)

@@ -1,0 +1,20 @@
+business: government
+apps:
+  - app: citizen-portal
+    priority: essential
+  - app: permits-licensing
+    priority: important
+  - app: case-management
+    priority: essential
+  - app: public-procurement
+    priority: important
+  - app: grants-management
+    priority: essential
+  - app: civic-engagement
+    priority: important
+  - app: regulatory-enforcement
+    priority: important
+  - app: bi-analytics
+    priority: important
+  - app: document-management
+    priority: support

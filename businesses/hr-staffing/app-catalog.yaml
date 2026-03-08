@@ -1,0 +1,22 @@
+business: hr-staffing
+apps:
+  - app: applicant-tracking
+    priority: important
+  - app: talent-marketplace
+    priority: important
+  - app: contract-management
+    priority: essential
+  - app: onboarding-offboarding
+    priority: important
+  - app: payroll-billing
+    priority: important
+  - app: compliance-tracking
+    priority: important
+  - app: workforce-analytics
+    priority: important
+  - app: client-portal
+    priority: essential
+  - app: crm
+    priority: important
+  - app: accounting-finance
+    priority: important

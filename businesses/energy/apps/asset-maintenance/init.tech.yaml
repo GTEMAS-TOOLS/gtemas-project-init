@@ -1,0 +1,58 @@
+business: energy
+app: asset-maintenance
+project_name_pattern: "{business}-{app}"
+priority: essential
+description: "Predictive and preventive maintenance for generation, transmission, and distribution assets"
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - maintenance_manager
+  - field_technician
+  - reliability_engineer
+  - asset_manager
+core_modules:
+  - work_order_management
+  - preventive_maintenance
+  - predictive_analytics
+  - asset_registry
+  - spare_parts_inventory
+  - condition_monitoring
+  - mobile_workforce
+  - compliance_tracking
+key_user_flows:
+  - Create and assign maintenance work order
+  - Execute predictive maintenance based on sensor data
+  - Track asset condition and remaining useful life
+  - Manage spare parts inventory and procurement
+  - Generate regulatory compliance maintenance reports
+data_entities:
+  - Asset
+  - WorkOrder
+  - MaintenanceSchedule
+  - SparePart
+  - ConditionReading
+  - InspectionReport
+integrations:
+  - scada-ems (inbound)
+  - iot_sensors (inbound)
+  - erp (bidirectional)
+  - gis (bidirectional)
+nfr:
+  performance: "P95 API < 400ms for core operations"
+  security: "RBAC, audit log, encrypted sensitive fields"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - maintenance_standards
+  - safety_regulations
+  - environmental_compliance

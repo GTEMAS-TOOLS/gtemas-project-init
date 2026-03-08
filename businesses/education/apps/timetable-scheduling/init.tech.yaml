@@ -2,6 +2,7 @@ business: education
 app: timetable-scheduling
 project_name_pattern: "{business}-{app}"
 priority: important
+description: "Class scheduling, room allocation, and teacher workload balancing"
 language_output:
   - en
   - vi
@@ -15,15 +16,37 @@ mode_options:
   - replace_existing
   - new_app
 target_users:
-  - owner
-  - manager
-  - staff
+  - registrar
+  - department_head
+  - instructor
+  - student
 core_modules:
-  - class_schedule
+  - class_schedule_generator
   - room_allocation
-  - teacher_workload
+  - teacher_workload_balancing
+  - conflict_detection
+  - student_preference_input
+  - exam_scheduling
+  - calendar_publish
+  - substitution_management
+key_user_flows:
+  - Generate class schedule with constraint optimization
+  - Detect and resolve room/teacher conflicts
+  - Publish timetable to students and faculty
+  - Schedule exams without student overlaps
+  - Manage teacher substitution for absence
+data_entities:
+  - ClassSession
+  - Room
+  - TimeSlot
+  - Teacher
+  - Conflict
+  - ExamSchedule
+  - Substitution
 integrations:
-  - sis
+  - sis (bidirectional)
+  - calendar (outbound)
+  - notification_service (outbound)
 nfr:
   performance: "P95 API < 400ms for core operations"
   security: "RBAC, audit log, encrypted sensitive fields"
@@ -31,3 +54,4 @@ nfr:
   ai_governance: "Human review required for AI-generated business logic"
 compliance:
   - audit_log
+  - workload_regulations

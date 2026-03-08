@@ -1,0 +1,22 @@
+business: food-beverage
+apps:
+  - app: recipe-management
+    priority: essential
+  - app: production-planning
+    priority: important
+  - app: food-safety-haccp
+    priority: important
+  - app: batch-traceability
+    priority: important
+  - app: distribution-management
+    priority: essential
+  - app: quality-control
+    priority: important
+  - app: menu-nutrition
+    priority: important
+  - app: supply-chain
+    priority: important
+  - app: crm
+    priority: important
+  - app: accounting-finance
+    priority: important

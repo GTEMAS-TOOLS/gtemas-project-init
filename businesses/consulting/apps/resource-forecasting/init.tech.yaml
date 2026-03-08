@@ -1,0 +1,57 @@
+business: consulting
+app: resource-forecasting
+project_name_pattern: "{business}-{app}"
+priority: advanced
+description: "Demand forecasting, capacity planning, skills gap analysis, and bench management"
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - resource_manager
+  - managing_partner
+  - hr_manager
+  - practice_lead
+core_modules:
+  - demand_forecast
+  - capacity_planning
+  - skills_matrix
+  - bench_management
+  - hiring_trigger_alerts
+  - scenario_planning
+  - utilization_prediction
+  - contractor_management
+key_user_flows:
+  - Forecast resource demand from pipeline and backlog
+  - Identify skills gaps for upcoming projects
+  - Plan capacity and trigger hiring if needed
+  - Manage bench consultants with training/internal projects
+  - Run scenario analysis for growth planning
+data_entities:
+  - DemandForecast
+  - Capacity
+  - SkillsGap
+  - BenchRecord
+  - HiringPlan
+  - Scenario
+integrations:
+  - hris (inbound)
+  - psa (inbound)
+  - crm (inbound)
+  - bi-analytics (outbound)
+nfr:
+  performance: "P95 API < 400ms for core operations"
+  security: "RBAC, audit log, encrypted sensitive fields"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - model_governance
+  - labor_regulations

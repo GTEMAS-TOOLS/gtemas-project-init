@@ -2,6 +2,7 @@ business: retail
 app: ecommerce
 project_name_pattern: "{business}-{app}"
 priority: important
+description: "Online storefront with product catalog, cart, checkout, payment, and order tracking"
 language_output:
   - en
   - vi
@@ -15,22 +16,53 @@ mode_options:
   - replace_existing
   - new_app
 target_users:
-  - owner
-  - manager
-  - staff
+  - ecommerce_manager
+  - content_editor
+  - customer
+  - merchandiser
 core_modules:
-  - catalog
+  - product_catalog
+  - search_filters
   - cart_checkout
-  - payment
+  - payment_processing
   - order_tracking
+  - reviews_ratings
+  - wishlist
+  - SEO_management
+  - mobile_responsive
+key_user_flows:
+  - Customer browses catalog and adds items to cart
+  - Guest or logged-in checkout with payment
+  - Customer tracks order status and delivery
+  - Merchandiser updates product content and pricing
+  - Customer leaves review after purchase
+data_entities:
+  - Product
+  - Category
+  - Cart
+  - Order
+  - Payment
+  - Review
+  - Wishlist
+  - Customer
+  - Promotion
 integrations:
-  - payment_gateway
-  - oms
-  - crm
+  - payment_gateway (bidirectional)
+  - order-management (outbound)
+  - inventory-management (bidirectional)
+  - crm (outbound)
+  - shipping_provider (outbound)
 nfr:
-  performance: "P95 API < 400ms for core operations"
-  security: "RBAC, audit log, encrypted sensitive fields"
-  availability: "99.9% monthly"
+  performance: "Page load < 2s, checkout < 3s, handles 10x traffic spikes"
+  security: "PCI-DSS, WAF, DDoS protection, encrypted sessions"
+  availability: "99.95% monthly"
   ai_governance: "Human review required for AI-generated business logic"
 compliance:
+  - pci_dss
   - privacy_policy_controls
+  - accessibility_wcag
+  - consumer_protection
+tech_stack_hints:
+  - Headless commerce architecture
+  - CDN for static assets
+  - Server-side rendering for SEO

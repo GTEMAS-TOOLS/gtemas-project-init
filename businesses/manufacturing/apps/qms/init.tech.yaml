@@ -2,6 +2,7 @@ business: manufacturing
 app: qms
 project_name_pattern: "{business}-{app}"
 priority: important
+description: "Quality management for plans, non-conformances, CAPA, and supplier quality"
 language_output:
   - en
   - vi
@@ -15,21 +16,43 @@ mode_options:
   - replace_existing
   - new_app
 target_users:
-  - owner
-  - manager
-  - staff
+  - quality_manager
+  - quality_inspector
+  - supplier_quality_engineer
+  - regulatory_affairs
 core_modules:
   - quality_plan
-  - non_conformance
+  - non_conformance_management
   - capa
   - supplier_quality
+  - audit_management
+  - statistical_process_control
+  - document_control
+  - customer_complaints
+key_user_flows:
+  - Record non-conformance and assign investigation
+  - Complete CAPA cycle: root cause, action, verification
+  - Conduct supplier quality audit
+  - Review SPC chart and trigger alert
+  - Manage customer complaint to resolution
+data_entities:
+  - NonConformance
+  - CAPA
+  - Audit
+  - SupplierScore
+  - Complaint
+  - QualityPlan
+  - SPCDataPoint
 integrations:
-  - mes
-  - erp
+  - mes (inbound)
+  - erp (bidirectional)
+  - document-management (bidirectional)
 nfr:
   performance: "P95 API < 400ms for core operations"
   security: "RBAC, audit log, encrypted sensitive fields"
   availability: "99.9% monthly"
   ai_governance: "Human review required for AI-generated business logic"
 compliance:
+  - iso9001
   - regulatory_compliance
+  - audit_readiness

@@ -2,6 +2,7 @@ business: manufacturing
 app: wms
 project_name_pattern: "{business}-{app}"
 priority: important
+description: "Warehouse management for raw materials, WIP, and finished goods"
 language_output:
   - en
   - vi
@@ -15,17 +16,38 @@ mode_options:
   - replace_existing
   - new_app
 target_users:
-  - owner
-  - manager
-  - staff
+  - warehouse_manager
+  - warehouse_operator
+  - receiving_clerk
+  - shipping_clerk
 core_modules:
-  - inbound
-  - putaway
-  - picking
+  - inbound_receiving
+  - putaway_rules
+  - picking_strategies
   - shipping
+  - bin_management
+  - cycle_count
+  - kitting
+  - returns_processing
+key_user_flows:
+  - Receive raw materials against PO
+  - Put away to designated bin location
+  - Pick and kit materials for production order
+  - Ship finished goods against sales order
+  - Perform cycle count and reconcile
+data_entities:
+  - Warehouse
+  - Bin
+  - StockMovement
+  - PickList
+  - ShipmentOrder
+  - ReceivingNote
+  - CycleCount
 integrations:
-  - erp
-  - tms
+  - erp (bidirectional)
+  - tms (outbound)
+  - barcode_scanner (inbound)
+  - mes (bidirectional)
 nfr:
   performance: "P95 API < 400ms for core operations"
   security: "RBAC, audit log, encrypted sensitive fields"
@@ -33,3 +55,4 @@ nfr:
   ai_governance: "Human review required for AI-generated business logic"
 compliance:
   - audit_log
+  - inventory_accuracy_controls

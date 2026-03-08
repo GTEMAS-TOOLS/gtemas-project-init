@@ -1,0 +1,20 @@
+business: energy
+apps:
+  - app: scada-ems
+    priority: essential
+  - app: asset-maintenance
+    priority: essential
+  - app: meter-data-management
+    priority: essential
+  - app: outage-management
+    priority: important
+  - app: energy-trading
+    priority: important
+  - app: regulatory-reporting
+    priority: important
+  - app: accounting-finance
+    priority: important
+  - app: hris
+    priority: important
+  - app: bi-analytics
+    priority: important

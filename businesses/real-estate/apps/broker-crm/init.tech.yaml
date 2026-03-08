@@ -2,6 +2,7 @@ business: real-estate
 app: broker-crm
 project_name_pattern: "{business}-{app}"
 priority: essential
+description: "Sales and leasing CRM for lead capture, deal pipeline, site visits, and commission tracking"
 language_output:
   - en
   - vi
@@ -15,17 +16,38 @@ mode_options:
   - replace_existing
   - new_app
 target_users:
-  - owner
-  - manager
-  - staff
+  - broker
+  - leasing_agent
+  - sales_manager
+  - marketing_coordinator
 core_modules:
   - lead_capture
   - deal_pipeline
-  - site_visit
+  - site_visit_scheduling
   - commission_tracking
+  - property_matching
+  - communication_log
+  - performance_reporting
+  - listing_management
+key_user_flows:
+  - Capture lead from portal/walk-in and assign agent
+  - Match client requirements to available properties
+  - Schedule and log site visit
+  - Track deal through negotiation to close
+  - Calculate and process agent commission
+data_entities:
+  - Lead
+  - Deal
+  - SiteVisit
+  - Commission
+  - Listing
+  - Agent
+  - Communication
 integrations:
-  - crm
-  - calendar
+  - property-management (inbound)
+  - calendar (bidirectional)
+  - email (outbound)
+  - property_portal (outbound)
 nfr:
   performance: "P95 API < 400ms for core operations"
   security: "RBAC, audit log, encrypted sensitive fields"
@@ -33,3 +55,5 @@ nfr:
   ai_governance: "Human review required for AI-generated business logic"
 compliance:
   - privacy_policy_controls
+  - commission_regulations
+  - fair_housing

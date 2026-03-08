@@ -1,0 +1,59 @@
+business: banking
+app: bi-analytics
+project_name_pattern: "{business}-{app}"
+priority: important
+description: "KPI dashboards, self-service reporting, and data analytics for banking"
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - executive
+  - department_head
+  - analyst
+  - operations_manager
+core_modules:
+  - kpi_dashboard
+  - self_service_reports
+  - data_models
+  - alerts
+  - benchmarking
+  - trend_analysis
+  - scheduled_reports
+  - data_connectors
+key_user_flows:
+  - Monitor daily KPIs on dashboard
+  - Build ad-hoc report
+  - Set up automated alert for threshold
+  - Analyze trend over time period
+  - Share dashboard with stakeholders
+data_entities:
+  - Dashboard
+  - Report
+  - KPI
+  - DataModel
+  - Alert
+  - Benchmark
+  - Schedule
+integrations:
+  - data_warehouse (bidirectional)
+  - erp (inbound)
+  - crm (inbound)
+  - accounting-finance (inbound)
+nfr:
+  performance: "P95 API < 400ms for core operations"
+  security: "RBAC, audit log, encrypted sensitive fields"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - role_based_access
+  - audit_log
+  - data_governance

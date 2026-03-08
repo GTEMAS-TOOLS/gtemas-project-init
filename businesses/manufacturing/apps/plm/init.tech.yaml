@@ -2,6 +2,7 @@ business: manufacturing
 app: plm
 project_name_pattern: "{business}-{app}"
 priority: advanced
+description: "Product lifecycle management for BOM, engineering changes, and document control"
 language_output:
   - en
   - vi
@@ -15,17 +16,39 @@ mode_options:
   - replace_existing
   - new_app
 target_users:
-  - owner
-  - manager
-  - staff
+  - product_engineer
+  - design_engineer
+  - engineering_manager
+  - quality_manager
 core_modules:
-  - bom
-  - change_management
-  - product_lifecycle
+  - bom_management
+  - engineering_change_order
+  - product_lifecycle_stages
   - document_control
+  - revision_management
+  - approval_workflows
+  - part_classification
+  - supplier_collaboration
+key_user_flows:
+  - Create new product BOM from design
+  - Submit engineering change order for review
+  - Manage product through lifecycle stages (concept to EOL)
+  - Control document versions and approvals
+  - Collaborate with supplier on component specs
+data_entities:
+  - Product
+  - BOM
+  - ECO
+  - Document
+  - Part
+  - Revision
+  - LifecycleStage
+  - ApprovalRecord
 integrations:
-  - erp
-  - cad_system
+  - erp (bidirectional)
+  - cad_system (inbound)
+  - document-management (bidirectional)
+  - supplier_portal (outbound)
 nfr:
   performance: "P95 API < 400ms for core operations"
   security: "RBAC, audit log, encrypted sensitive fields"
@@ -33,3 +56,5 @@ nfr:
   ai_governance: "Human review required for AI-generated business logic"
 compliance:
   - document_traceability
+  - change_control
+  - iso9001

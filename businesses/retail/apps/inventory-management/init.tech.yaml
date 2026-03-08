@@ -2,6 +2,7 @@ business: retail
 app: inventory-management
 project_name_pattern: "{business}-{app}"
 priority: essential
+description: "Real-time stock tracking, replenishment, transfers, and cycle counting across all locations"
 language_output:
   - en
   - vi
@@ -15,18 +16,41 @@ mode_options:
   - replace_existing
   - new_app
 target_users:
-  - owner
-  - manager
-  - staff
+  - inventory_manager
+  - warehouse_staff
+  - store_manager
+  - buyer_planner
 core_modules:
   - stock_balance
-  - replenishment
-  - transfers
+  - auto_replenishment
+  - inter_store_transfers
   - cycle_count
+  - receiving
+  - dead_stock_analysis
+  - multi_location_view
+  - lot_serial_tracking
+  - low_stock_alerts
+key_user_flows:
+  - Receive goods against purchase order
+  - Auto-generate replenishment orders based on reorder points
+  - Initiate and complete cycle count
+  - Transfer stock between locations
+  - Review dead stock and trigger markdowns
+data_entities:
+  - SKU
+  - StockLevel
+  - Location
+  - TransferOrder
+  - PurchaseOrder
+  - CycleCount
+  - Lot
+  - Adjustment
 integrations:
-  - pos
-  - wms
-  - supplier_portal
+  - pos (bidirectional)
+  - wms (bidirectional)
+  - supplier_portal (outbound)
+  - ecommerce (bidirectional)
+  - accounting-finance (outbound)
 nfr:
   performance: "P95 API < 400ms for core operations"
   security: "RBAC, audit log, encrypted sensitive fields"
@@ -34,3 +58,4 @@ nfr:
   ai_governance: "Human review required for AI-generated business logic"
 compliance:
   - traceability_controls
+  - audit_log

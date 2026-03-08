@@ -2,6 +2,7 @@ business: healthcare
 app: telehealth
 project_name_pattern: "{business}-{app}"
 priority: important
+description: "Virtual consultation platform with video calls, e-prescriptions, and clinical session notes"
 language_output:
   - en
   - vi
@@ -15,16 +16,35 @@ mode_options:
   - replace_existing
   - new_app
 target_users:
-  - owner
-  - manager
-  - staff
+  - physician
+  - patient
+  - nurse
+  - specialist
 core_modules:
   - video_consultation
   - e_prescription
   - session_notes
+  - virtual_waiting_room
+  - screen_sharing
+  - file_upload
+  - follow_up_scheduling
+key_user_flows:
+  - Patient joins virtual waiting room
+  - Physician starts video consultation
+  - In-session prescription and note taking
+  - Post-session summary sent to patient
+  - Follow-up appointment scheduling
+data_entities:
+  - Session
+  - Prescription
+  - SessionNote
+  - Recording
+  - FollowUp
 integrations:
-  - video_platform
-  - emr-ehr
+  - video_platform (bidirectional)
+  - emr-ehr (outbound)
+  - pharmacy_system (outbound)
+  - appointment_scheduling (bidirectional)
 nfr:
   performance: "P95 API < 400ms for core operations"
   security: "RBAC, audit log, encrypted sensitive fields"
@@ -32,3 +52,5 @@ nfr:
   ai_governance: "Human review required for AI-generated business logic"
 compliance:
   - privacy_policy_controls
+  - hipaa
+  - telehealth_regulations

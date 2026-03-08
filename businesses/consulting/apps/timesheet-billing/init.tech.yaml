@@ -1,0 +1,59 @@
+business: consulting
+app: timesheet-billing
+project_name_pattern: "{business}-{app}"
+priority: important
+description: "Time entry, rate cards, invoice generation, and collections management"
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - consultant
+  - finance_manager
+  - engagement_manager
+  - client
+core_modules:
+  - time_entry
+  - rate_card_management
+  - invoice_generation
+  - collections_tracking
+  - revenue_recognition
+  - expense_reimbursement
+  - client_approval_workflow
+  - aging_reports
+key_user_flows:
+  - Consultant submits weekly timesheet
+  - Manager reviews and approves time entries
+  - Generate invoice based on approved time and rates
+  - Track outstanding invoices and send reminders
+  - Recognize revenue per ASC 606 milestones
+data_entities:
+  - TimeEntry
+  - RateCard
+  - Invoice
+  - Payment
+  - Expense
+  - RevenueEntry
+  - Collection
+integrations:
+  - psa (bidirectional)
+  - accounting-finance (outbound)
+  - payment_gateway (outbound)
+  - email (outbound)
+nfr:
+  performance: "P95 API < 400ms for core operations"
+  security: "RBAC, audit log, encrypted sensitive fields"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - billing_controls
+  - revenue_recognition_standards
+  - audit_trail

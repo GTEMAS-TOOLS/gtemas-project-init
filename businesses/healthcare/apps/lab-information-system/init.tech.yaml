@@ -2,6 +2,7 @@ business: healthcare
 app: lab-information-system
 project_name_pattern: "{business}-{app}"
 priority: advanced
+description: "Laboratory workflow management for sample tracking, instrument interfacing, and result validation"
 language_output:
   - en
   - vi
@@ -15,16 +16,38 @@ mode_options:
   - replace_existing
   - new_app
 target_users:
-  - owner
-  - manager
-  - staff
+  - lab_technician
+  - lab_manager
+  - pathologist
+  - quality_officer
 core_modules:
   - sample_tracking
   - result_validation
   - instrument_interface
+  - quality_control
+  - turnaround_time_monitoring
+  - barcode_management
+  - abnormal_flagging
+  - report_generation
+key_user_flows:
+  - Sample accessioning and barcode labeling
+  - Instrument result auto-capture and validation
+  - QC review and abnormal flagging
+  - Result approval and release to EMR
+  - Turnaround time monitoring and escalation
+data_entities:
+  - Sample
+  - TestOrder
+  - Result
+  - Instrument
+  - QCBatch
+  - Report
+  - AnalyteReference
 integrations:
-  - emr-ehr
-  - lab_devices
+  - emr-ehr (bidirectional)
+  - lab_instruments (inbound)
+  - barcode_scanner (inbound)
+  - billing-rcm (outbound)
 nfr:
   performance: "P95 API < 400ms for core operations"
   security: "RBAC, audit log, encrypted sensitive fields"
@@ -32,3 +55,9 @@ nfr:
   ai_governance: "Human review required for AI-generated business logic"
 compliance:
   - traceability_controls
+  - iso15189
+  - cap_accreditation
+  - clinical_data_retention
+tech_stack_hints:
+  - HL7v2/ASTM for instrument interfaces
+  - Real-time event streaming for result routing

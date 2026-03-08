@@ -1,0 +1,61 @@
+business: ecommerce
+app: marketing-automation
+project_name_pattern: "{business}-{app}"
+priority: important
+description: "Multi-channel marketing campaigns, customer journeys, segmentation, and attribution"
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - marketing_manager
+  - growth_marketer
+  - content_creator
+  - data_analyst
+core_modules:
+  - campaign_management
+  - customer_journeys
+  - email_sms_automation
+  - audience_segmentation
+  - attribution_modeling
+  - ab_testing
+  - social_media_integration
+  - performance_dashboard
+key_user_flows:
+  - Create automated email journey for new customers
+  - Build audience segment for targeted campaign
+  - Launch A/B test on landing page or email
+  - Analyze multi-touch attribution for campaigns
+  - Track ROAS by channel and campaign
+data_entities:
+  - Campaign
+  - Journey
+  - Segment
+  - ABTest
+  - Attribution
+  - Channel
+  - Engagement
+integrations:
+  - crm (bidirectional)
+  - ad_platforms (bidirectional)
+  - storefront-commerce (inbound)
+  - analytics (bidirectional)
+  - email_provider (outbound)
+nfr:
+  performance: "P95 API < 400ms for core operations"
+  security: "RBAC, audit log, encrypted sensitive fields"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - consent_management
+  - gdpr
+  - can_spam
+  - opt_out_management

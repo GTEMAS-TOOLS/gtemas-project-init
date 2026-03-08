@@ -1,0 +1,59 @@
+business: banking
+app: claims-case-management
+project_name_pattern: "{business}-{app}"
+priority: important
+description: "Insurance claims intake, investigation, adjudication, and payout processing"
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - claims_adjuster
+  - claims_manager
+  - customer
+  - fraud_investigator
+core_modules:
+  - case_intake
+  - document_collection
+  - investigation_workflow
+  - assessment_adjudication
+  - approval_routing
+  - payout_processing
+  - subrogation
+  - analytics_dashboard
+key_user_flows:
+  - Customer files claim online or via agent
+  - Adjuster reviews documents and assesses damage
+  - Route complex cases for investigation
+  - Approve settlement and process payout
+  - Identify subrogation opportunities
+data_entities:
+  - Claim
+  - Case
+  - Document
+  - Assessment
+  - Payout
+  - Investigation
+  - SubrogationRecord
+integrations:
+  - document-management (bidirectional)
+  - payment_gateway (outbound)
+  - fraud-monitoring (outbound)
+  - customer_portal (outbound)
+nfr:
+  performance: "P95 API < 400ms for core operations"
+  security: "RBAC, audit log, encrypted sensitive fields"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - audit_log
+  - claims_regulations
+  - fair_settlement

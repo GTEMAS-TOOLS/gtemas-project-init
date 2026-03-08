@@ -2,6 +2,7 @@ business: retail
 app: loyalty-customer
 project_name_pattern: "{business}-{app}"
 priority: important
+description: "Loyalty program with tiers, points, rewards, and personalized promotions"
 language_output:
   - en
   - vi
@@ -15,18 +16,39 @@ mode_options:
   - replace_existing
   - new_app
 target_users:
-  - owner
-  - manager
-  - staff
+  - marketing_manager
+  - customer
+  - store_associate
+  - loyalty_program_manager
 core_modules:
   - member_tiers
-  - points
-  - promotions
+  - points_engine
+  - rewards_catalog
+  - personalized_promotions
+  - referral_program
   - segments
+  - engagement_tracking
+  - expiration_rules
+key_user_flows:
+  - Customer enrolls in loyalty program at checkout or online
+  - Earn points on purchase and redeem for reward
+  - Receive personalized offer based on purchase history
+  - Tier upgrade notification and benefit unlocking
+  - Refer a friend and earn bonus points
+data_entities:
+  - Member
+  - Tier
+  - PointsTransaction
+  - Reward
+  - Promotion
+  - Referral
+  - RedemptionHistory
 integrations:
-  - crm
-  - pos
-  - marketing-automation
+  - crm (bidirectional)
+  - pos (bidirectional)
+  - ecommerce (bidirectional)
+  - email (outbound)
+  - sms (outbound)
 nfr:
   performance: "P95 API < 400ms for core operations"
   security: "RBAC, audit log, encrypted sensitive fields"
@@ -34,3 +56,4 @@ nfr:
   ai_governance: "Human review required for AI-generated business logic"
 compliance:
   - consent_management
+  - privacy_policy_controls

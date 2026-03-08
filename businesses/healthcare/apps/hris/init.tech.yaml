@@ -1,0 +1,59 @@
+business: healthcare
+app: hris
+project_name_pattern: "{business}-{app}"
+priority: important
+description: "Employee profiles, attendance, payroll, leave management, credentialing, and performance reviews for clinical and admin staff"
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - hr_manager
+  - payroll_officer
+  - department_head
+  - employee
+core_modules:
+  - employee_profile
+  - attendance_tracking
+  - payroll_processing
+  - leave_management
+  - performance_review
+  - credentialing
+  - shift_scheduling
+  - compliance_training
+key_user_flows:
+  - Onboard new employee with credentialing verification
+  - Process monthly payroll with shift differentials
+  - Manage leave requests and approvals
+  - Conduct annual performance review
+  - Track license and certification renewals
+data_entities:
+  - Employee
+  - Attendance
+  - PayrollRecord
+  - LeaveRequest
+  - PerformanceReview
+  - Credential
+  - Shift
+integrations:
+  - biometric_device (inbound)
+  - payroll_provider (outbound)
+  - credentialing_db (outbound)
+  - email (outbound)
+nfr:
+  performance: "P95 API < 400ms for core operations"
+  security: "RBAC, audit log, encrypted sensitive fields"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - labor_data_controls
+  - credential_verification
+  - hipaa_workforce

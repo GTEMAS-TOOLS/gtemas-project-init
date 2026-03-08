@@ -2,6 +2,7 @@ business: construction
 app: safety-compliance
 project_name_pattern: "{business}-{app}"
 priority: important
+description: "Safety incident tracking, checklist management, training records, and compliance reporting"
 language_output:
   - en
   - vi
@@ -15,20 +16,44 @@ mode_options:
   - replace_existing
   - new_app
 target_users:
-  - owner
-  - manager
-  - staff
+  - safety_officer
+  - site_superintendent
+  - project_manager
+  - hr_manager
 core_modules:
   - incident_reporting
-  - safety_checklist
+  - safety_checklists
   - training_records
+  - toolbox_talks
+  - near_miss_reporting
+  - corrective_actions
+  - compliance_calendar
+  - safety_dashboard
+key_user_flows:
+  - Report safety incident with investigation workflow
+  - Conduct daily safety checklist before work starts
+  - Log toolbox talk attendance
+  - Track worker training certifications and expiry
+  - Generate OSHA/regulatory compliance reports
+data_entities:
+  - Incident
+  - Checklist
+  - TrainingRecord
+  - ToolboxTalk
+  - NearMiss
+  - CorrectiveAction
+  - ComplianceReport
 integrations:
-  - field-service
-  - document-management
+  - field-service (bidirectional)
+  - document-management (outbound)
+  - hr_system (inbound)
+  - mobile_app (bidirectional)
 nfr:
   performance: "P95 API < 400ms for core operations"
   security: "RBAC, audit log, encrypted sensitive fields"
   availability: "99.9% monthly"
   ai_governance: "Human review required for AI-generated business logic"
 compliance:
-  - osh_controls
+  - osha_controls
+  - incident_reporting_regulations
+  - training_documentation

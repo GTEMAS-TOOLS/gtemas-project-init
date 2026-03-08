@@ -1,0 +1,24 @@
+business: insurance
+apps:
+  - app: policy-management
+    priority: essential
+  - app: claims-management
+    priority: essential
+  - app: underwriting
+    priority: important
+  - app: actuarial-analytics
+    priority: important
+  - app: agent-portal
+    priority: essential
+  - app: reinsurance
+    priority: important
+  - app: customer-self-service
+    priority: important
+  - app: fraud-detection
+    priority: important
+  - app: crm
+    priority: important
+  - app: accounting-finance
+    priority: important
+  - app: bi-analytics
+    priority: important

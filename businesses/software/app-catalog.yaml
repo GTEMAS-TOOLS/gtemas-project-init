@@ -1,0 +1,24 @@
+business: software
+apps:
+  - app: project-delivery
+    priority: essential
+  - app: talent-management
+    priority: essential
+  - app: client-portal
+    priority: important
+  - app: devops-platform
+    priority: important
+  - app: quality-assurance
+    priority: important
+  - app: knowledge-base
+    priority: important
+  - app: business-development
+    priority: advanced
+  - app: crm
+    priority: important
+  - app: accounting-finance
+    priority: important
+  - app: hris
+    priority: important
+  - app: bi-analytics
+    priority: important

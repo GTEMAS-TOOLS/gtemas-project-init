@@ -1,0 +1,20 @@
+business: chemicals
+apps:
+  - app: recipe-management
+    priority: essential
+  - app: batch-processing
+    priority: important
+  - app: process-safety
+    priority: important
+  - app: quality-control
+    priority: important
+  - app: sds-management
+    priority: essential
+  - app: supply-chain
+    priority: important
+  - app: regulatory-compliance
+    priority: important
+  - app: accounting-finance
+    priority: important
+  - app: bi-analytics
+    priority: important

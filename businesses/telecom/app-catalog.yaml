@@ -1,0 +1,20 @@
+business: telecom
+apps:
+  - app: network-operations
+    priority: important
+  - app: subscriber-management
+    priority: essential
+  - app: billing-rating
+    priority: important
+  - app: service-provisioning
+    priority: important
+  - app: field-service
+    priority: important
+  - app: fault-management
+    priority: essential
+  - app: customer-self-service
+    priority: important
+  - app: crm
+    priority: important
+  - app: bi-analytics
+    priority: important

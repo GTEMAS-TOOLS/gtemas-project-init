@@ -2,6 +2,7 @@ business: healthcare
 app: appointment-scheduling
 project_name_pattern: "{business}-{app}"
 priority: essential
+description: "Patient appointment booking, queue management, and provider calendar coordination"
 language_output:
   - en
   - vi
@@ -15,18 +16,42 @@ mode_options:
   - replace_existing
   - new_app
 target_users:
-  - owner
-  - manager
-  - staff
+  - receptionist
+  - patient
+  - physician
+  - nurse
+  - call_center_agent
 core_modules:
   - doctor_calendar
-  - booking
+  - booking_engine
   - queue_management
-  - reminders
+  - automated_reminders
+  - waitlist
+  - multi_location_scheduling
+  - recurring_appointments
+  - walk_in_management
+key_user_flows:
+  - Patient self-service online booking
+  - Receptionist manual appointment creation
+  - Automated SMS/email reminder 24h before
+  - Check-in and queue assignment on arrival
+  - Rescheduling and cancellation with waitlist backfill
+  - Provider schedule template management
+data_entities:
+  - Appointment
+  - Provider
+  - Patient
+  - Location
+  - TimeSlot
+  - WaitlistEntry
+  - Reminder
+  - CheckIn
 integrations:
-  - sms
-  - calendar
-  - telehealth
+  - sms_gateway (outbound)
+  - email (outbound)
+  - calendar (bidirectional)
+  - emr-ehr (bidirectional)
+  - telehealth (outbound)
 nfr:
   performance: "P95 API < 400ms for core operations"
   security: "RBAC, audit log, encrypted sensitive fields"
@@ -34,3 +59,4 @@ nfr:
   ai_governance: "Human review required for AI-generated business logic"
 compliance:
   - privacy_policy_controls
+  - consent_management

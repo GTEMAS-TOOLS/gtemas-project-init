@@ -1,0 +1,22 @@
+business: asset-management
+apps:
+  - app: portfolio-management
+    priority: essential
+  - app: trading-oms
+    priority: important
+  - app: fund-accounting
+    priority: important
+  - app: investor-portal
+    priority: essential
+  - app: risk-analytics
+    priority: important
+  - app: compliance-monitoring
+    priority: important
+  - app: performance-attribution
+    priority: important
+  - app: client-reporting
+    priority: important
+  - app: crm
+    priority: important
+  - app: bi-analytics
+    priority: important

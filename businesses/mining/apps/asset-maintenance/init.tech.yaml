@@ -1,0 +1,59 @@
+business: mining
+app: asset-maintenance
+project_name_pattern: "{business}-{app}"
+priority: important
+description: "Predictive and preventive maintenance for mining fleet, processing equipment, and site infrastructure"
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - maintenance_manager
+  - field_technician
+  - reliability_engineer
+  - planner
+core_modules:
+  - work_order_management
+  - preventive_maintenance
+  - predictive_analytics
+  - asset_registry
+  - spare_parts_inventory
+  - condition_monitoring
+  - mobile_workforce
+  - reliability_tracking
+key_user_flows:
+  - Create and assign equipment work order
+  - Execute predictive maintenance from sensor alerts
+  - Track equipment condition and remaining useful life
+  - Manage spare parts inventory and emergency orders
+  - Analyze mean time between failures by equipment type
+data_entities:
+  - Asset
+  - WorkOrder
+  - MaintenanceSchedule
+  - SparePart
+  - ConditionReading
+  - FailureRecord
+  - MTBF
+integrations:
+  - fleet-dispatch (inbound)
+  - iot_sensors (inbound)
+  - erp (bidirectional)
+  - procurement (outbound)
+nfr:
+  performance: "P95 API < 400ms for core operations"
+  security: "RBAC, audit log, encrypted sensitive fields"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - maintenance_standards
+  - safety_regulations
+  - equipment_certification

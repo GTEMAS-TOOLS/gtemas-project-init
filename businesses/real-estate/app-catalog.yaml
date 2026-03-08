@@ -12,3 +12,13 @@ apps:
     priority: important
   - app: valuation-analytics
     priority: advanced
+  - app: crm
+    priority: important
+  - app: accounting-finance
+    priority: important
+  - app: hris
+    priority: important
+  - app: bi-analytics
+    priority: important
+  - app: document-management
+    priority: support

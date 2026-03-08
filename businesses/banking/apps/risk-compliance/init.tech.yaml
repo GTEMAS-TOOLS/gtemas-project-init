@@ -1,0 +1,58 @@
+business: banking
+app: risk-compliance
+project_name_pattern: "{business}-{app}"
+priority: important
+description: "Enterprise risk register, controls testing, regulatory reporting, and incident tracking"
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - risk_manager
+  - compliance_officer
+  - internal_auditor
+  - cro
+core_modules:
+  - risk_register
+  - controls_testing
+  - incident_tracking
+  - regulatory_reports
+  - policy_management
+  - compliance_calendar
+  - key_risk_indicators
+  - board_reporting
+key_user_flows:
+  - Maintain and update enterprise risk register
+  - Schedule and execute controls testing
+  - Track compliance incidents to resolution
+  - Generate regulatory reports (quarterly/annual)
+  - Monitor key risk indicators dashboard
+data_entities:
+  - Risk
+  - Control
+  - TestResult
+  - Incident
+  - RegulatoryReport
+  - Policy
+  - KRI
+integrations:
+  - bi-analytics (outbound)
+  - core_system (inbound)
+  - document-management (bidirectional)
+nfr:
+  performance: "P95 API < 400ms for core operations"
+  security: "RBAC, audit log, encrypted sensitive fields"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - sox_controls
+  - regulatory_frameworks
+  - audit_readiness

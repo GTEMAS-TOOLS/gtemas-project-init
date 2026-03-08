@@ -1,0 +1,20 @@
+business: nonprofit
+apps:
+  - app: donor-management
+    priority: essential
+  - app: grant-management
+    priority: essential
+  - app: program-management
+    priority: essential
+  - app: volunteer-management
+    priority: essential
+  - app: fundraising-campaigns
+    priority: important
+  - app: impact-reporting
+    priority: important
+  - app: crm
+    priority: important
+  - app: accounting-finance
+    priority: important
+  - app: bi-analytics
+    priority: important

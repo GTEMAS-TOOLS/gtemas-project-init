@@ -2,6 +2,7 @@ business: hospitality
 app: revenue-management
 project_name_pattern: "{business}-{app}"
 priority: important
+description: "Dynamic pricing, demand forecasting, and channel strategy optimization"
 language_output:
   - en
   - vi
@@ -15,16 +16,36 @@ mode_options:
   - replace_existing
   - new_app
 target_users:
-  - owner
-  - manager
-  - staff
+  - revenue_manager
+  - general_manager
+  - reservations_manager
 core_modules:
-  - forecasting
-  - dynamic_pricing
-  - demand_analysis
+  - demand_forecasting
+  - dynamic_pricing_engine
+  - competitor_rate_monitoring
+  - channel_performance
+  - booking_pace_analysis
+  - restriction_management
+  - rate_recommendations
+  - what_if_scenarios
+key_user_flows:
+  - Review demand forecast and adjust rates
+  - Set automated pricing rules by season/day
+  - Compare competitor rates and position strategy
+  - Analyze channel mix and adjust distribution
+  - Run what-if scenario for event period
+data_entities:
+  - Forecast
+  - RateRecommendation
+  - CompetitorRate
+  - ChannelPerformance
+  - PricingRule
+  - BookingPace
 integrations:
-  - pms
-  - bi-analytics
+  - pms (bidirectional)
+  - channel_manager (outbound)
+  - bi-analytics (outbound)
+  - competitor_scraper (inbound)
 nfr:
   performance: "P95 API < 400ms for core operations"
   security: "RBAC, audit log, encrypted sensitive fields"
@@ -32,3 +53,4 @@ nfr:
   ai_governance: "Human review required for AI-generated business logic"
 compliance:
   - approval_workflow
+  - rate_parity_agreements

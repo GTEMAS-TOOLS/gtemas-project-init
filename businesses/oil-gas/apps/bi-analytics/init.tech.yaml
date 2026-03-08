@@ -1,0 +1,58 @@
+business: oil-gas
+app: bi-analytics
+project_name_pattern: "{business}-{app}"
+priority: important
+description: "Production analytics, operational dashboards, and ESG reporting for oil & gas operations"
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - executive
+  - production_analyst
+  - hse_analyst
+  - reservoir_analyst
+core_modules:
+  - production_dashboard
+  - hse_analytics
+  - cost_analytics
+  - reservoir_analytics
+  - esg_reporting
+  - benchmarking
+  - predictive_models
+  - executive_reporting
+key_user_flows:
+  - Monitor production KPIs across portfolio
+  - Analyze safety trends and leading indicators
+  - Track lifting costs and operational efficiency
+  - Generate ESG metrics and sustainability report
+  - Build predictive model for equipment failure
+data_entities:
+  - Dashboard
+  - Report
+  - KPI
+  - ESGMetric
+  - Prediction
+  - Benchmark
+integrations:
+  - production-management (inbound)
+  - hse-management (inbound)
+  - accounting-finance (inbound)
+  - data_warehouse (bidirectional)
+nfr:
+  performance: "P95 API < 400ms for core operations"
+  security: "RBAC, audit log, encrypted sensitive fields"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - data_governance
+  - esg_reporting_standards
+  - audit_log

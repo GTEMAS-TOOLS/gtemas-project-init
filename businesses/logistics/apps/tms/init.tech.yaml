@@ -2,6 +2,7 @@ business: logistics
 app: tms
 project_name_pattern: "{business}-{app}"
 priority: essential
+description: "Transportation management for shipment planning, carrier selection, freight audit, and route optimization"
 language_output:
   - en
   - vi
@@ -15,17 +16,41 @@ mode_options:
   - replace_existing
   - new_app
 target_users:
-  - owner
-  - manager
-  - staff
+  - dispatch_manager
+  - logistics_coordinator
+  - freight_analyst
+  - operations_director
 core_modules:
   - shipment_planning
   - carrier_management
-  - freight_audit
+  - freight_audit_payment
   - route_optimization
+  - load_planning
+  - rate_management
+  - tracking_visibility
+  - performance_analytics
+  - document_management
+key_user_flows:
+  - Create shipment and select optimal carrier
+  - Plan multi-stop route with load optimization
+  - Track shipment in real-time and manage exceptions
+  - Audit freight invoice against contracted rates
+  - Analyze carrier performance and lane costs
+data_entities:
+  - Shipment
+  - Carrier
+  - Route
+  - Load
+  - FreightInvoice
+  - Rate
+  - TrackingEvent
+  - Lane
 integrations:
-  - wms
-  - gps_telematics
+  - wms (bidirectional)
+  - gps_telematics (inbound)
+  - erp (bidirectional)
+  - carrier_api (bidirectional)
+  - mapping_service (outbound)
 nfr:
   performance: "P95 API < 400ms for core operations"
   security: "RBAC, audit log, encrypted sensitive fields"
@@ -33,3 +58,5 @@ nfr:
   ai_governance: "Human review required for AI-generated business logic"
 compliance:
   - transport_compliance
+  - audit_log
+  - carrier_certification

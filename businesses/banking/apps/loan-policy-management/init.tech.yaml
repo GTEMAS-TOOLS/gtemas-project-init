@@ -1,0 +1,60 @@
+business: banking
+app: loan-policy-management
+project_name_pattern: "{business}-{app}"
+priority: essential
+description: "Loan/policy origination, underwriting, disbursement, and lifecycle management"
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - loan_officer
+  - underwriter
+  - disbursement_clerk
+  - collections_agent
+  - customer
+core_modules:
+  - application_intake
+  - credit_underwriting
+  - policy_configuration
+  - disbursement
+  - repayment_schedule
+  - renewal_management
+  - document_generation
+  - portfolio_dashboard
+key_user_flows:
+  - Receive loan/policy application and assess
+  - Underwrite based on credit/risk criteria
+  - Configure policy terms and pricing
+  - Disburse funds or issue policy document
+  - Track repayment schedule and manage renewals
+data_entities:
+  - LoanApplication
+  - Policy
+  - UnderwritingDecision
+  - Disbursement
+  - RepaymentSchedule
+  - Premium
+  - Renewal
+integrations:
+  - core_banking_system (bidirectional)
+  - payment_gateway (outbound)
+  - credit_bureau (outbound)
+  - document-management (bidirectional)
+nfr:
+  performance: "P95 API < 400ms for core operations"
+  security: "RBAC, audit log, encrypted sensitive fields"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - regulatory_reporting
+  - fair_lending
+  - consumer_protection

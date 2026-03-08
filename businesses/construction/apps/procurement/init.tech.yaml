@@ -2,6 +2,7 @@ business: construction
 app: procurement
 project_name_pattern: "{business}-{app}"
 priority: essential
+description: "RFQ management, purchase orders, vendor tracking, and contract administration"
 language_output:
   - en
   - vi
@@ -15,17 +16,38 @@ mode_options:
   - replace_existing
   - new_app
 target_users:
-  - owner
-  - manager
-  - staff
+  - procurement_manager
+  - buyer
+  - project_manager
+  - contracts_admin
 core_modules:
-  - rfq
-  - po
+  - rfq_management
+  - purchase_order
   - vendor_management
   - contract_tracking
+  - material_delivery_tracking
+  - invoice_matching
+  - approved_vendor_list
+  - bid_comparison
+key_user_flows:
+  - Create RFQ and send to approved vendors
+  - Compare bids and award purchase order
+  - Track material delivery against schedule
+  - Process vendor invoice with 3-way match
+  - Manage subcontractor contract milestones
+data_entities:
+  - RFQ
+  - PurchaseOrder
+  - Vendor
+  - Contract
+  - DeliveryNote
+  - Invoice
+  - BidComparison
 integrations:
-  - project-controls
-  - inventory-management
+  - project-controls (bidirectional)
+  - accounting-finance (outbound)
+  - inventory-management (bidirectional)
+  - vendor_portal (outbound)
 nfr:
   performance: "P95 API < 400ms for core operations"
   security: "RBAC, audit log, encrypted sensitive fields"
@@ -33,3 +55,5 @@ nfr:
   ai_governance: "Human review required for AI-generated business logic"
 compliance:
   - approval_workflow
+  - contract_controls
+  - audit_trail

@@ -1,0 +1,60 @@
+business: software
+app: quality-assurance
+project_name_pattern: "{business}-{app}"
+priority: important
+description: "Test management, automation framework, code quality tracking, and QA process governance"
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - qa_lead
+  - qa_engineer
+  - developer
+  - delivery_manager
+core_modules:
+  - test_plan_management
+  - test_case_repository
+  - automation_framework
+  - defect_tracking
+  - code_quality_metrics
+  - regression_suite
+  - test_environment_management
+  - qa_dashboard
+  - code_review_tracking
+key_user_flows:
+  - Create test plan for sprint/release
+  - Execute test cases and log results
+  - Track and triage defects
+  - Review code quality metrics (coverage, complexity, lint)
+  - Generate QA report for client review
+data_entities:
+  - TestPlan
+  - TestCase
+  - TestExecution
+  - Defect
+  - CodeQualityMetric
+  - RegressionSuite
+  - QAReport
+integrations:
+  - jira_azure_devops (bidirectional)
+  - ci_cd_pipeline (inbound)
+  - git_repository (inbound)
+  - test_automation_tools (bidirectional)
+nfr:
+  performance: "P95 API < 400ms for core operations"
+  security: "RBAC, audit log, encrypted sensitive fields"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - quality_standards
+  - test_traceability
+  - audit_log

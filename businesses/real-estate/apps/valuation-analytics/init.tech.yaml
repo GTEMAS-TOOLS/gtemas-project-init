@@ -2,6 +2,7 @@ business: real-estate
 app: valuation-analytics
 project_name_pattern: "{business}-{app}"
 priority: advanced
+description: "Property valuation modeling, market comparables, and portfolio performance analytics"
 language_output:
   - en
   - vi
@@ -15,15 +16,36 @@ mode_options:
   - replace_existing
   - new_app
 target_users:
-  - owner
-  - manager
-  - staff
+  - portfolio_manager
+  - investment_analyst
+  - asset_manager
+  - finance_director
 core_modules:
-  - market_comps
-  - valuation_model
+  - market_comparables
+  - dcf_valuation_model
   - occupancy_forecast
+  - portfolio_dashboard
+  - cap_rate_analysis
+  - sensitivity_analysis
+  - benchmark_reporting
+  - market_data_feeds
+key_user_flows:
+  - Run DCF valuation for acquisition target
+  - Compare property performance against market benchmarks
+  - Forecast occupancy and revenue for budget planning
+  - Analyze cap rate trends by market/asset class
+  - Generate portfolio performance report for investors
+data_entities:
+  - Valuation
+  - Comparable
+  - Forecast
+  - PortfolioMetric
+  - MarketData
+  - BenchmarkReport
 integrations:
-  - bi-analytics
+  - bi-analytics (bidirectional)
+  - property-management (inbound)
+  - market_data_provider (inbound)
 nfr:
   performance: "P95 API < 400ms for core operations"
   security: "RBAC, audit log, encrypted sensitive fields"
@@ -31,3 +53,5 @@ nfr:
   ai_governance: "Human review required for AI-generated business logic"
 compliance:
   - model_governance
+  - valuation_standards
+  - investor_reporting

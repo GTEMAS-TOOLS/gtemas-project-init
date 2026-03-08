@@ -1,0 +1,59 @@
+business: mining
+app: accounting-finance
+project_name_pattern: "{business}-{app}"
+priority: important
+description: "Mining financial management with project cost accounting, royalty calculations, and capital expenditure tracking"
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - finance_controller
+  - accountant
+  - cfo
+  - royalty_analyst
+core_modules:
+  - general_ledger
+  - project_accounting
+  - royalty_calculation
+  - capex_tracking
+  - cost_per_tonne
+  - financial_reporting
+  - budget_management
+  - tax_management
+key_user_flows:
+  - Track operating costs by mine site and cost center
+  - Calculate and report mineral royalties
+  - Track capital project spending vs approved budget
+  - Generate mine-level P&L and cost per tonne
+  - Prepare mining tax and royalty filings
+data_entities:
+  - GLAccount
+  - ProjectCost
+  - Royalty
+  - CapexProject
+  - Budget
+  - TaxRecord
+  - FinancialReport
+integrations:
+  - banking (bidirectional)
+  - erp (bidirectional)
+  - fleet-dispatch (inbound)
+  - processing-plant (inbound)
+nfr:
+  performance: "P95 API < 400ms for core operations"
+  security: "RBAC, audit log, encrypted sensitive fields"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - mining_royalty_regulations
+  - tax_compliance
+  - audit_log

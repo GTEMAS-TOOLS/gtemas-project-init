@@ -1,16 +1,30 @@
 business: healthcare
 apps:
-  - app: crm
-    priority: important
   - app: emr-ehr
     priority: essential
   - app: appointment-scheduling
     priority: essential
   - app: billing-rcm
     priority: essential
+  - app: crm
+    priority: important
   - app: patient-portal
     priority: important
   - app: telehealth
     priority: important
   - app: lab-information-system
     priority: advanced
+  - app: clinical-decision-support
+    priority: advanced
+  - app: pharmacy-management
+    priority: advanced
+  - app: crm
+    priority: important
+  - app: accounting-finance
+    priority: important
+  - app: hris
+    priority: important
+  - app: bi-analytics
+    priority: important
+  - app: document-management
+    priority: support

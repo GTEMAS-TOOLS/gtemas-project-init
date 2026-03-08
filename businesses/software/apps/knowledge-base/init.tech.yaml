@@ -1,0 +1,59 @@
+business: software
+app: knowledge-base
+project_name_pattern: "{business}-{app}"
+priority: important
+description: "Internal knowledge management with technical playbooks, project learnings, and onboarding content"
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - engineer
+  - tech_lead
+  - engineering_manager
+  - new_hire
+core_modules:
+  - technical_playbooks
+  - project_retrospective_library
+  - technology_radar
+  - onboarding_guides
+  - code_snippet_library
+  - search_discovery
+  - contribution_tracking
+  - review_workflow
+key_user_flows:
+  - Search for technical playbook or past solution
+  - Document project learnings in retrospective
+  - New hire follows onboarding guide for tech stack
+  - Contribute reusable code snippet or utility
+  - Review and approve new knowledge article
+data_entities:
+  - Article
+  - Playbook
+  - Retrospective
+  - TechRadarItem
+  - Snippet
+  - OnboardingGuide
+  - Contribution
+integrations:
+  - project-delivery (inbound)
+  - git_repository (inbound)
+  - search_engine (bidirectional)
+  - collaboration_tool (bidirectional)
+nfr:
+  performance: "P95 API < 400ms for core operations"
+  security: "RBAC, audit log, encrypted sensitive fields"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - ip_protection
+  - client_confidentiality
+  - retention_policy

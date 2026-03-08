@@ -1,0 +1,58 @@
+business: mining
+app: mine-planning
+project_name_pattern: "{business}-{app}"
+priority: essential
+description: "Mine design, scheduling, resource modeling, drill-blast planning, and production planning"
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - mine_planner
+  - geologist
+  - mining_engineer
+  - operations_manager
+core_modules:
+  - pit_design
+  - underground_layout
+  - production_scheduling
+  - resource_modeling
+  - grade_control
+  - drill_blast_planning
+  - stockpile_management
+  - scenario_analysis
+key_user_flows:
+  - Design open pit or underground layout from geological model
+  - Create production schedule from resource model and constraints
+  - Plan drill and blast patterns for each bench
+  - Optimize cut-off grade and mining sequence
+  - Analyze production scenarios and NPV economics
+data_entities:
+  - MinePlan
+  - ResourceBlock
+  - ProductionSchedule
+  - DrillPattern
+  - Stockpile
+  - Scenario
+integrations:
+  - geological_model (inbound)
+  - survey_data (inbound)
+  - fleet-dispatch (outbound)
+  - erp (outbound)
+nfr:
+  performance: "P95 API < 400ms for core operations"
+  security: "RBAC, audit log, encrypted sensitive fields"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - mine_planning_standards
+  - resource_reporting_codes
+  - environmental_constraints

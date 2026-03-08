@@ -2,6 +2,7 @@ business: hospitality
 app: booking-engine
 project_name_pattern: "{business}-{app}"
 priority: important
+description: "Direct booking engine for website with availability, pricing, promotions, and upselling"
 language_output:
   - en
   - vi
@@ -15,17 +16,37 @@ mode_options:
   - replace_existing
   - new_app
 target_users:
-  - owner
-  - manager
-  - staff
+  - guest
+  - reservations_manager
+  - marketing_manager
+  - revenue_manager
 core_modules:
-  - availability
-  - pricing
+  - availability_search
+  - rate_display
   - booking_flow
-  - promotions
+  - promotion_management
+  - upsell_cross_sell
+  - multi_language
+  - mobile_optimized
+  - confirmation_emails
+key_user_flows:
+  - Guest searches availability and selects room
+  - Apply promo code and complete booking
+  - Upsell room upgrade or add-on during booking
+  - Receive confirmation and pre-arrival email
+  - Modify or cancel booking self-service
+data_entities:
+  - Booking
+  - RoomAvailability
+  - Promotion
+  - Upsell
+  - Confirmation
+  - GuestPreference
 integrations:
-  - pms
-  - channel_manager
+  - pms (bidirectional)
+  - channel_manager (outbound)
+  - payment_gateway (bidirectional)
+  - email (outbound)
 nfr:
   performance: "P95 API < 400ms for core operations"
   security: "RBAC, audit log, encrypted sensitive fields"
@@ -33,3 +54,5 @@ nfr:
   ai_governance: "Human review required for AI-generated business logic"
 compliance:
   - privacy_policy_controls
+  - pci_dss
+  - consumer_protection

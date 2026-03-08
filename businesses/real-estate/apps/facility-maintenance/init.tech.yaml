@@ -2,6 +2,7 @@ business: real-estate
 app: facility-maintenance
 project_name_pattern: "{business}-{app}"
 priority: important
+description: "Work order management, vendor assignment, SLA tracking, and asset registry for facilities"
 language_output:
   - en
   - vi
@@ -15,17 +16,39 @@ mode_options:
   - replace_existing
   - new_app
 target_users:
-  - owner
-  - manager
-  - staff
+  - facility_manager
+  - maintenance_technician
+  - vendor
+  - tenant
+  - property_manager
 core_modules:
-  - work_order
+  - work_order_management
   - vendor_assignment
   - sla_tracking
   - asset_registry
+  - preventive_maintenance
+  - inspection_schedules
+  - cost_tracking
+  - mobile_reporting
+key_user_flows:
+  - Tenant submits maintenance request
+  - Assign work order to internal tech or vendor
+  - Track SLA compliance for response and resolution
+  - Schedule preventive maintenance for building systems
+  - Track maintenance cost by property and category
+data_entities:
+  - WorkOrder
+  - Asset
+  - Vendor
+  - SLARecord
+  - PMSchedule
+  - Inspection
+  - CostRecord
 integrations:
-  - property-management
-  - cmms
+  - property-management (bidirectional)
+  - vendor_portal (outbound)
+  - iot_building_systems (inbound)
+  - mobile_app (bidirectional)
 nfr:
   performance: "P95 API < 400ms for core operations"
   security: "RBAC, audit log, encrypted sensitive fields"
@@ -33,3 +56,5 @@ nfr:
   ai_governance: "Human review required for AI-generated business logic"
 compliance:
   - safety_compliance
+  - sla_documentation
+  - vendor_certification

@@ -2,6 +2,7 @@ business: hospitality
 app: guest-loyalty
 project_name_pattern: "{business}-{app}"
 priority: advanced
+description: "Loyalty program with member profiles, points, personalized offers, and engagement campaigns"
 language_output:
   - en
   - vi
@@ -15,17 +16,38 @@ mode_options:
   - replace_existing
   - new_app
 target_users:
-  - owner
-  - manager
-  - staff
+  - loyalty_manager
+  - marketing_manager
+  - guest
+  - front_desk_agent
 core_modules:
   - member_profile
-  - points
-  - offers
+  - points_engine
+  - tier_management
+  - personalized_offers
   - engagement_campaigns
+  - partner_rewards
+  - redemption_catalog
+  - stay_history_analysis
+key_user_flows:
+  - Guest enrolls in loyalty program
+  - Earn points on stay and F&B spend
+  - Receive personalized offer based on preferences
+  - Redeem points for free night or upgrade
+  - Tier upgrade/downgrade based on activity
+data_entities:
+  - Member
+  - PointsTransaction
+  - Tier
+  - Offer
+  - Redemption
+  - StayHistory
+  - Campaign
 integrations:
-  - crm
-  - pms
+  - pms (inbound)
+  - crm (bidirectional)
+  - email (outbound)
+  - mobile_app (bidirectional)
 nfr:
   performance: "P95 API < 400ms for core operations"
   security: "RBAC, audit log, encrypted sensitive fields"
@@ -33,3 +55,4 @@ nfr:
   ai_governance: "Human review required for AI-generated business logic"
 compliance:
   - consent_management
+  - privacy_policy_controls

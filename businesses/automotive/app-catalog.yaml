@@ -1,0 +1,22 @@
+business: automotive
+apps:
+  - app: vehicle-plm
+    priority: important
+  - app: dealer-management
+    priority: essential
+  - app: connected-vehicle
+    priority: important
+  - app: warranty-management
+    priority: essential
+  - app: supply-chain
+    priority: important
+  - app: quality-management
+    priority: essential
+  - app: after-sales-service
+    priority: important
+  - app: crm
+    priority: important
+  - app: accounting-finance
+    priority: important
+  - app: bi-analytics
+    priority: important

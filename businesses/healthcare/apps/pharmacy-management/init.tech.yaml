@@ -1,0 +1,58 @@
+business: healthcare
+app: pharmacy-management
+project_name_pattern: "{business}-{app}"
+priority: advanced
+description: "Pharmacy dispensing, drug inventory, prescription verification, and controlled substance tracking"
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - pharmacist
+  - pharmacy_technician
+  - physician
+  - nurse
+core_modules:
+  - prescription_processing
+  - dispensing_workflow
+  - drug_inventory
+  - controlled_substance_tracking
+  - formulary_management
+  - drug_utilization_review
+  - patient_counseling
+  - compounding_management
+key_user_flows:
+  - Receive and verify prescription order
+  - Check formulary and insurance coverage
+  - Dispense medication with barcode verification
+  - Track controlled substance inventory and DEA reporting
+  - Provide patient counseling documentation
+data_entities:
+  - Prescription
+  - Medication
+  - DispenseRecord
+  - ControlledSubstanceLog
+  - Formulary
+  - DrugInventory
+integrations:
+  - emr-ehr (bidirectional)
+  - clinical-decision-support (bidirectional)
+  - drug_wholesaler (outbound)
+  - insurance_payer (outbound)
+nfr:
+  performance: "P95 API < 400ms for core operations"
+  security: "RBAC, audit log, encrypted sensitive fields"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - dea_compliance
+  - hipaa
+  - pharmacy_regulations

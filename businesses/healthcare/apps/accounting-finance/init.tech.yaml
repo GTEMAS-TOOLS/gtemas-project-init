@@ -1,0 +1,59 @@
+business: healthcare
+app: accounting-finance
+project_name_pattern: "{business}-{app}"
+priority: important
+description: "General ledger, accounts payable/receivable, financial reporting, and healthcare-specific billing reconciliation"
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - finance_controller
+  - accountant
+  - cfo
+  - accounts_payable_clerk
+core_modules:
+  - general_ledger
+  - accounts_payable
+  - accounts_receivable
+  - cashflow_management
+  - financial_reporting
+  - budget_management
+  - cost_center_tracking
+  - audit_preparation
+key_user_flows:
+  - Record and post journal entries
+  - Process vendor invoices and payments
+  - Reconcile billing revenue with bank deposits
+  - Generate monthly financial statements
+  - Prepare for annual audit
+data_entities:
+  - GLAccount
+  - JournalEntry
+  - Invoice
+  - Payment
+  - Budget
+  - CostCenter
+  - FinancialReport
+integrations:
+  - billing-rcm (inbound)
+  - banking (bidirectional)
+  - payment_gateway (bidirectional)
+  - einvoice (outbound)
+nfr:
+  performance: "P95 API < 400ms for core operations"
+  security: "RBAC, audit log, encrypted sensitive fields"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - audit_log
+  - tax_compliance
+  - gaap_ifrs

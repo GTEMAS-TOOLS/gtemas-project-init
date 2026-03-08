@@ -1,0 +1,62 @@
+business: ecommerce
+app: recommendation-personalization
+project_name_pattern: "{business}-{app}"
+priority: advanced
+description: "Product recommendations, customer personalization, A/B testing, and segment-based experiences"
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - product_manager
+  - data_scientist
+  - merchandiser
+  - ecommerce_manager
+core_modules:
+  - recommendation_engine
+  - collaborative_filtering
+  - content_based_filtering
+  - dynamic_segments
+  - ab_testing_framework
+  - personalized_search_ranking
+  - behavioral_analytics
+  - model_performance_tracking
+key_user_flows:
+  - Show personalized product recommendations on homepage
+  - Recommend complementary products on product/cart page
+  - Personalize search results based on user behavior
+  - Run A/B test on recommendation algorithm
+  - Track recommendation click-through and conversion rates
+data_entities:
+  - Recommendation
+  - UserProfile
+  - BehaviorEvent
+  - ABExperiment
+  - ModelVersion
+  - SegmentRule
+integrations:
+  - storefront-commerce (bidirectional)
+  - analytics (inbound)
+  - bi-analytics (outbound)
+  - search_engine (outbound)
+nfr:
+  performance: "P95 API < 400ms for core operations"
+  security: "RBAC, audit log, encrypted sensitive fields"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - model_governance
+  - privacy_controls
+  - consent_management
+tech_stack_hints:
+  - ML pipeline for model training and serving
+  - Real-time event processing for behavioral signals
+  - Feature store for user/product attributes

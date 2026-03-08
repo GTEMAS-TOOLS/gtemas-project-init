@@ -1,0 +1,58 @@
+business: oil-gas
+app: hse-management
+project_name_pattern: "{business}-{app}"
+priority: essential
+description: "Health, safety, and environmental incident tracking, risk assessment, permit management, and compliance"
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - hse_manager
+  - safety_officer
+  - field_supervisor
+  - environmental_specialist
+core_modules:
+  - incident_reporting
+  - risk_assessment
+  - permit_to_work
+  - safety_observation
+  - environmental_monitoring
+  - audit_management
+  - training_tracking
+  - emergency_response
+key_user_flows:
+  - Report safety incident with investigation workflow
+  - Conduct job hazard analysis and risk assessment
+  - Issue and manage permit to work
+  - Track environmental emissions and discharge
+  - Conduct HSE audit and track corrective actions
+data_entities:
+  - Incident
+  - RiskAssessment
+  - Permit
+  - SafetyObservation
+  - EmissionRecord
+  - Audit
+  - CorrectiveAction
+integrations:
+  - production-management (inbound)
+  - iot_sensors (inbound)
+  - regulatory_portal (outbound)
+nfr:
+  performance: "P95 API < 400ms for core operations"
+  security: "RBAC, audit log, encrypted sensitive fields"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - osha_compliance
+  - environmental_regulations
+  - process_safety_management

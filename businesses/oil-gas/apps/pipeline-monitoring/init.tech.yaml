@@ -1,0 +1,58 @@
+business: oil-gas
+app: pipeline-monitoring
+project_name_pattern: "{business}-{app}"
+priority: important
+description: "Pipeline integrity, leak detection, flow monitoring, and maintenance planning"
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - pipeline_engineer
+  - integrity_manager
+  - control_room_operator
+  - field_inspector
+core_modules:
+  - flow_monitoring
+  - leak_detection
+  - integrity_management
+  - inspection_scheduling
+  - cathodic_protection
+  - right_of_way
+  - pig_tracking
+  - compliance_reporting
+key_user_flows:
+  - Monitor pipeline flow and pressure in real-time
+  - Detect leak anomaly and trigger response
+  - Schedule inline inspection (pigging)
+  - Track cathodic protection readings
+  - Generate integrity compliance report
+data_entities:
+  - Pipeline
+  - FlowReading
+  - LeakAlert
+  - Inspection
+  - CathodicReading
+  - MaintenanceRecord
+integrations:
+  - scada (inbound)
+  - iot_sensors (inbound)
+  - gis (bidirectional)
+  - hse-management (outbound)
+nfr:
+  performance: "P95 API < 400ms for core operations"
+  security: "RBAC, audit log, encrypted sensitive fields"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - phmsa_regulations
+  - pipeline_integrity_management
+  - environmental_protection

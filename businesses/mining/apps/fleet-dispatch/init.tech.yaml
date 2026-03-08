@@ -1,0 +1,63 @@
+business: mining
+app: fleet-dispatch
+project_name_pattern: "{business}-{app}"
+priority: essential
+description: "Real-time fleet management, truck-shovel dispatch, equipment tracking, and cycle time optimization"
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - dispatch_operator
+  - equipment_manager
+  - mine_supervisor
+  - maintenance_planner
+core_modules:
+  - real_time_tracking
+  - automated_dispatch
+  - operator_assignment
+  - fuel_management
+  - cycle_time_analysis
+  - road_maintenance
+  - payload_monitoring
+  - shift_management
+key_user_flows:
+  - Assign trucks to shovels based on queue optimization
+  - Track equipment location and status in real-time
+  - Monitor payload and cycle times vs targets
+  - Schedule operator shifts and equipment assignments
+  - Analyze fuel consumption and idle time by operator
+data_entities:
+  - Equipment
+  - DispatchAssignment
+  - Operator
+  - CycleRecord
+  - FuelRecord
+  - ShiftLog
+  - PayloadRecord
+integrations:
+  - mine-planning (inbound)
+  - gps_tracking (inbound)
+  - iot_sensors (inbound)
+  - asset-maintenance (outbound)
+nfr:
+  performance: "P95 API < 400ms for core operations"
+  security: "RBAC, audit log, encrypted sensitive fields"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - equipment_certification
+  - operator_licensing
+  - fatigue_management
+tech_stack_hints:
+  - GPS/RTK positioning for precise location
+  - Real-time optimization algorithms
+  - Edge computing for pit connectivity

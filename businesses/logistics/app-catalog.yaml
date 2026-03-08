@@ -12,3 +12,11 @@ apps:
     priority: important
   - app: customs-trade-compliance
     priority: advanced
+  - app: crm
+    priority: important
+  - app: accounting-finance
+    priority: important
+  - app: hris
+    priority: important
+  - app: bi-analytics
+    priority: important

@@ -2,6 +2,7 @@ business: healthcare
 app: billing-rcm
 project_name_pattern: "{business}-{app}"
 priority: essential
+description: "Revenue cycle management including claims, invoicing, payments, and denial management"
 language_output:
   - en
   - vi
@@ -15,22 +16,48 @@ mode_options:
   - replace_existing
   - new_app
 target_users:
-  - owner
-  - manager
-  - staff
+  - billing_clerk
+  - revenue_cycle_manager
+  - finance_director
+  - insurance_coordinator
 core_modules:
-  - claims
-  - invoice
-  - payments
+  - charge_capture
+  - claims_submission
+  - denial_management
+  - payment_posting
+  - patient_invoicing
+  - insurance_eligibility_check
   - reconciliation
+  - aging_reports
+  - collections_workflow
+key_user_flows:
+  - Charge capture from encounter to claim
+  - Electronic claim submission to payer
+  - Denial review, appeal, and resubmission
+  - Patient statement generation and payment collection
+  - Insurance eligibility verification before visit
+  - Monthly revenue reconciliation and reporting
+data_entities:
+  - Claim
+  - Invoice
+  - Payment
+  - Denial
+  - InsurancePlan
+  - ChargeItem
+  - Adjustment
+  - Collection
 integrations:
-  - insurance
-  - payment_gateway
-  - accounting
+  - insurance_payer (bidirectional)
+  - payment_gateway (outbound)
+  - accounting_system (outbound)
+  - emr-ehr (inbound)
 nfr:
-  performance: "P95 API < 400ms for core operations"
-  security: "RBAC, audit log, encrypted sensitive fields"
+  performance: "Batch claim processing < 5min for 1000 claims"
+  security: "PCI-DSS for payment data, encrypted PHI"
   availability: "99.9% monthly"
   ai_governance: "Human review required for AI-generated business logic"
 compliance:
   - billing_audit_controls
+  - icd10_cpt_coding
+  - hipaa
+  - pci_dss

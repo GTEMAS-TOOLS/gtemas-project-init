@@ -1,0 +1,20 @@
+business: agriculture
+apps:
+  - app: farm-management
+    priority: essential
+  - app: crop-planning
+    priority: important
+  - app: precision-agriculture
+    priority: important
+  - app: livestock-management
+    priority: essential
+  - app: supply-chain-traceability
+    priority: important
+  - app: marketplace
+    priority: important
+  - app: weather-analytics
+    priority: important
+  - app: crm
+    priority: important
+  - app: accounting-finance
+    priority: important

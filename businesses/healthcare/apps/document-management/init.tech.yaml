@@ -1,0 +1,58 @@
+business: healthcare
+app: document-management
+project_name_pattern: "{business}-{app}"
+priority: support
+description: "Clinical and administrative document repository with approval workflows, versioning, and compliance retention"
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - administrator
+  - compliance_officer
+  - department_head
+  - medical_records
+core_modules:
+  - document_repository
+  - approval_workflow
+  - versioning
+  - search
+  - retention_policy
+  - access_controls
+  - template_management
+  - audit_trail
+key_user_flows:
+  - Upload and categorize clinical document
+  - Route policy document for multi-level approval
+  - Search for historical patient consent form
+  - Enforce retention schedule for expired documents
+  - Generate audit trail report for compliance
+data_entities:
+  - Document
+  - Folder
+  - Version
+  - Approval
+  - RetentionRule
+  - AuditRecord
+integrations:
+  - emr-ehr (bidirectional)
+  - esign (outbound)
+  - cloud_storage (bidirectional)
+  - email (outbound)
+nfr:
+  performance: "P95 API < 400ms for core operations"
+  security: "RBAC, audit log, encrypted sensitive fields"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - retention_policy
+  - hipaa
+  - audit_trail

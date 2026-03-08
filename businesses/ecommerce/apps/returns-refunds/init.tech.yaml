@@ -1,0 +1,59 @@
+business: ecommerce
+app: returns-refunds
+project_name_pattern: "{business}-{app}"
+priority: important
+description: "Returns authorization, inspection, refund processing, and restocking workflow"
+language_output:
+  - en
+  - vi
+default_language: en
+theme_options:
+  - corporate
+  - modern
+  - minimal
+default_theme: corporate
+mode_options:
+  - replace_existing
+  - new_app
+target_users:
+  - returns_coordinator
+  - warehouse_staff
+  - customer
+  - finance_team
+core_modules:
+  - rma_generation
+  - return_label_creation
+  - inspection_workflow
+  - refund_processing
+  - restocking_rules
+  - exchange_management
+  - return_reason_analytics
+  - policy_configuration
+key_user_flows:
+  - Customer initiates return from order page
+  - Generate RMA and return shipping label
+  - Inspect returned item and determine disposition
+  - Process refund to original payment method
+  - Analyze return reasons for product improvement
+data_entities:
+  - RMA
+  - ReturnLabel
+  - Inspection
+  - Refund
+  - Exchange
+  - ReturnReason
+  - Disposition
+integrations:
+  - oms (bidirectional)
+  - payment_gateway (outbound)
+  - wms (outbound)
+  - customer-support (inbound)
+nfr:
+  performance: "P95 API < 400ms for core operations"
+  security: "RBAC, audit log, encrypted sensitive fields"
+  availability: "99.9% monthly"
+  ai_governance: "Human review required for AI-generated business logic"
+compliance:
+  - consumer_protection
+  - refund_policy_controls
+  - audit_log

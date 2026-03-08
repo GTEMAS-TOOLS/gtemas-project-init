@@ -2,6 +2,7 @@ business: logistics
 app: last-mile-delivery
 project_name_pattern: "{business}-{app}"
 priority: important
+description: "Last-mile dispatch, driver mobile app, proof of delivery, and customer notifications"
 language_output:
   - en
   - vi
@@ -15,18 +16,38 @@ mode_options:
   - replace_existing
   - new_app
 target_users:
-  - owner
-  - manager
-  - staff
+  - dispatch_coordinator
+  - delivery_driver
+  - customer
+  - operations_manager
 core_modules:
-  - dispatch
-  - driver_app
-  - pod
+  - dispatch_engine
+  - driver_mobile_app
+  - proof_of_delivery
   - customer_notifications
+  - delivery_slot_management
+  - photo_signature_capture
+  - failed_delivery_handling
+  - route_sequence_optimization
+key_user_flows:
+  - Auto-dispatch deliveries to nearest available driver
+  - Driver navigates route and captures POD
+  - Customer receives real-time delivery ETA
+  - Handle failed delivery (reschedule/redirect)
+  - Review delivery performance dashboard
+data_entities:
+  - Delivery
+  - Driver
+  - POD
+  - DeliverySlot
+  - Notification
+  - Route
+  - FailedDelivery
 integrations:
-  - mapping
-  - sms
-  - tms
+  - mapping_service (outbound)
+  - sms_push (outbound)
+  - tms (inbound)
+  - customer_portal (outbound)
 nfr:
   performance: "P95 API < 400ms for core operations"
   security: "RBAC, audit log, encrypted sensitive fields"
@@ -34,3 +55,4 @@ nfr:
   ai_governance: "Human review required for AI-generated business logic"
 compliance:
   - proof_of_delivery_audit
+  - privacy_controls
